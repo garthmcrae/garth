@@ -1,0 +1,11 @@
+@import 'variables';
+
+.paragraph {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.paragraph + .paragraph {
+  margin-top: $space;
+} 

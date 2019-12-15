@@ -1,0 +1,12 @@
+@import 'variables';
+
+.layout {
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  > div {
+    display: flex;
+  }
+}
