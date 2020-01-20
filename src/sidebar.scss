@@ -1,0 +1,68 @@
+@import 'variables';
+
+$width: 240px;
+
+.container {
+  @media (min-width: 768px) {
+    display: flex;
+    min-height: calc(100vh - 6.5rem);
+  }
+}
+
+.aside {
+  background: $background;
+  border-left: $border-width solid;
+  box-sizing: border-box;
+  flex: 0 1 $width;
+  height: 100vh;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  transition: right 0.3s ease-in-out;
+  right: 0;
+  width: $width;
+
+  @media (min-width: 768px) {
+    border-left: 0 solid;
+    border-right: $border-width solid;
+    height: initial;
+    overflow-y: auto;
+    position: relative;
+  }
+}
+
+
+.main {
+  box-sizing: border-box;
+  flex: 1 0 $width;
+  padding: 1rem;
+}
+
+.inactive {
+  right: -$width;
+
+  @media (min-width: 768px) {
+    right: 0;
+  }
+}
+
+.control {
+  appearance: none;
+  background: $background;
+  border: $border-width solid;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  height: 2rem;
+  padding: 1rem;
+  position: absolute;
+  left: -4rem;
+  top: 1.5rem;
+  width: 2rem;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+

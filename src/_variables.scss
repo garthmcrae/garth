@@ -1,9 +1,20 @@
-$border: 2px solid currentColor;
-$space: 16px;
+$border-color: currentColor;
+$border-style: solid;
+$border-width: 4px;
+$background: yellow;
+$color: blue;
+$font-size: 16px;
+$line-height: 20px;
+
+$border: $border-width $border-style $border-color;
+$margin: $font-size;
+$padding: $font-size;
+
+$anchor-color: currentColor;
 
 $button-background: transparent;
 $button-border: $border;
 $button-color: currentColor;
 $button-font-size: inherit;
 $button-font-weight: 600;
-$button-padding: $space;
+$button-padding: $padding;
