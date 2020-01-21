@@ -1,14 +1,18 @@
 @import 'variables';
 
 .header {
-  border-bottom: $border-width solid;
+  border-bottom: $border-width $border-style;
   box-sizing: border-box;
-  line-height: 1rem;
-  padding: 1rem;
+  line-height: 1;
+  padding: $padding;
 }
 
 .brand {
   font-size: inherit;
   font-weight: bold;
   line-height: 1;
+
+  > a {
+    text-decoration: none;
+  }
 }

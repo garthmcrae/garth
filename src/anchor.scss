@@ -2,4 +2,6 @@
 
 .anchor {
   color: $anchor-color;
+
+  @extend %link-interaction;
 }

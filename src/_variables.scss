@@ -1,14 +1,19 @@
 $border-color: currentColor;
 $border-style: solid;
-$border-width: 4px;
-$background: yellow;
+$border-width: 2px;
+$background: pink;
 $color: blue;
+$background: whitesmoke;
+$color: red;
+$background: honeydew;
+$color: coral;
+$font-family: 16px;
 $font-size: 16px;
 $line-height: 20px;
 
 $border: $border-width $border-style $border-color;
-$margin: $font-size;
-$padding: $font-size;
+$margin: 16px;
+$padding: 16px;
 
 $anchor-color: currentColor;
 
@@ -18,3 +23,23 @@ $button-color: currentColor;
 $button-font-size: inherit;
 $button-font-weight: 600;
 $button-padding: $padding;
+$button-text-align: left;
+
+%button-interaction {
+  box-shadow: 0 0 0 0 $border-color;
+  outline: none;
+
+  &:focus,
+  &:hover {
+    box-shadow: $border-width $border-width 0 0 $border-color;
+  }
+}
+
+%link-interaction {
+  &:focus,
+  &:hover {
+    background: $color;
+    color: $background;
+    outline: $border-width $border-style $color;
+  }
+}

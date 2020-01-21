@@ -4,9 +4,16 @@
   appearance: none;
   background: $button-background;
   border: $button-border;
+  box-sizing: border-box;
   color: $button-color;
   cursor: pointer;
+  display: block;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   padding: $button-padding;
+  text-align: $button-text-align;
+  text-decoration: none;
+  width: 100%;
+
+  @extend %button-interaction
 }

@@ -1,6 +1,7 @@
 @import 'variables';
 
 .rule {
-  border: $border-width / 2 solid currentColor;
+  border: none;
+  border-bottom: $border-width $border-style;
   margin: 0;
 }

@@ -5,7 +5,7 @@ $width: 240px;
 .container {
   @media (min-width: 768px) {
     display: flex;
-    min-height: calc(100vh - 6.5rem);
+    min-height: calc(100vh - #{($border-width * 2) + ($font-size * 2) + ($padding * 4)});
   }
 }
 
@@ -15,7 +15,6 @@ $width: 240px;
   box-sizing: border-box;
   flex: 0 1 $width;
   height: 100vh;
-  padding: 1rem;
   position: fixed;
   top: 0;
   transition: right 0.3s ease-in-out;
@@ -24,18 +23,20 @@ $width: 240px;
 
   @media (min-width: 768px) {
     border-left: 0 solid;
-    border-right: $border-width solid;
+    border-right: $border-width $border-style;
     height: initial;
     overflow-y: auto;
     position: relative;
   }
 }
 
-
 .main {
   box-sizing: border-box;
   flex: 1 0 $width;
-  padding: 1rem;
+}
+
+.active {
+  right: 0;
 }
 
 .inactive {
@@ -46,23 +47,34 @@ $width: 240px;
   }
 }
 
-.control {
+.bun {
   appearance: none;
   background: $background;
-  border: $border-width solid;
+  border: $border-width $border-style;
   box-sizing: border-box;
   color: inherit;
   cursor: pointer;
   display: block;
-  height: 2rem;
-  padding: 1rem;
+  padding: $padding;
   position: absolute;
-  left: -4rem;
-  top: 1.5rem;
-  width: 2rem;
+  right: calc(100% + #{$border-width + $margin});
+  top: $margin;
 
   @media (min-width: 768px) {
     display: none;
   }
 }
 
+.pickle,
+.cheese,
+.patty {
+  background: $color;
+  display: block;
+  height: $border-width;
+  margin: 0 auto;
+  width: $border-width * 5;
+}
+
+.cheese {
+  margin: $border-width auto;
+}

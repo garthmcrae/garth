@@ -36,10 +36,7 @@
   "scripts": {
     "build": "rollup -c",
     "deploy": "npm run lint && npm run build && npm version patch && npm publish",
-    "lint:js": "prettier --config ./.prettierrc --write \"src/**/*.js\" --loglevel silent && eslint \"src/**/*.js\" --quiet --fix",
-    "lint:scss": "prettier --config ./.prettierrc --write \"src/**/*.scss\" --loglevel silent && stylelint \"src/**/*.scss\" --fix",
-    "lint": "npm run lint:js && npm run lint:scss",
-    "prettier": "prettier --write src/**/*.{js,css}",
+    "prettier": "prettier --write src/**/*.{js,scss}",
     "start": "rollup -c -w"
   },
   "files": [

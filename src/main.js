@@ -6,6 +6,8 @@ import Container from './Container';
 import Footer from './Footer';
 import Header from './Header';
 import Layout from './Layout';
+import List from './List';
+import ListItem from './ListItem';
 import Paragraph from './Paragraph';
 import Root from './Root';
 import Rule from './Rule';
@@ -23,6 +25,8 @@ export {
   Footer,
   Header,
   Layout,
+  List,
+  ListItem,
   Paragraph,
   Root,
   Rule,

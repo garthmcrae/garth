@@ -6,7 +6,11 @@ const SidebarMenu = props => {
   const [active, setActive] = useState(false);
   return (
     <aside className={`${styles.aside} ${active ? styles.active : styles.inactive}`}>
-      <button aria-label="Menu" className={styles.control} onClick={() => setActive(!active)} />
+      <button aria-label="Menu" className={styles.bun} onClick={() => setActive(!active)}>
+        <span className={styles.pickle} />
+        <span className={styles.cheese} />
+        <span className={styles.patty} />
+      </button>
       <nav>{children}</nav>
     </aside>
   );
