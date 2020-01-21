@@ -14,4 +14,20 @@ import SidebarContent from './SidebarContent';
 import SidebarMenu from './SidebarMenu';
 import Title from './Title';
 
-export { Anchor, Border, Button, Cell, Container, Footer, Header, Layout, Paragraph, Root, Rule, Sidebar, SidebarContent, SidebarMenu, Title };
+export {
+  Anchor,
+  Border,
+  Button,
+  Cell,
+  Container,
+  Footer,
+  Header,
+  Layout,
+  Paragraph,
+  Root,
+  Rule,
+  Sidebar,
+  SidebarContent,
+  SidebarMenu,
+  Title,
+};

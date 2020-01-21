@@ -16,9 +16,10 @@
     "eslint-plugin-import": "2.17.2",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
-    "lint-staged": "8.1.6",
-    "node-sass": "4.12.0",
-    "prettier": "1.17.0",
+    "husky": "^4.0.10",
+    "lint-staged": "^8.1.6",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.17.0",
     "rollup": "1.11.3",
     "rollup-plugin-babel": "4.3.2",
     "rollup-plugin-commonjs": "9.3.4",
@@ -29,27 +30,30 @@
     "stylelint": "10.0.1",
     "stylelint-config-recommended-scss": "3.3.0"
   },
+  "peerDependencies": {
+    "react": "^16.12.0"
+  },
   "scripts": {
     "build": "rollup -c",
-    "start": "rollup -c -w",
+    "deploy": "npm run lint && npm run build && npm version patch && npm publish",
     "lint:js": "prettier --config ./.prettierrc --write \"src/**/*.js\" --loglevel silent && eslint \"src/**/*.js\" --quiet --fix",
     "lint:scss": "prettier --config ./.prettierrc --write \"src/**/*.scss\" --loglevel silent && stylelint \"src/**/*.scss\" --fix",
     "lint": "npm run lint:js && npm run lint:scss",
-    "deploy": "npm run lint && npm run build && npm version patch && npm publish"
+    "prettier": "prettier --write src/**/*.{js,css}",
+    "start": "rollup -c -w"
   },
   "files": [
     "dist"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "linters": {
-      "src/**/*.js": [
-        "prettier --config ./.prettierrc --write --loglevel silent",
-        "eslint --quiet --fix",
-        "git add"
-      ],
-      "src/**/*.scss": [
-        "prettier --config ./.prettierrc --write --loglevel silent",
-        "stylelint --fix --cache --cache-location \".stylelintcache\"",
+      "src/**/*.{js,css}": [
+        "prettier --write",
         "git add"
       ]
     }
