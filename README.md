@@ -3,14 +3,14 @@
 ## Install
 
 ```bash
-npm install --save components
+npm install --save garth
 ```
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import { Footer } from 'components';
+import { Button } from 'garth';
 
 const Example = props => <Button />;
 ```
