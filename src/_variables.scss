@@ -5,8 +5,8 @@ $background: pink;
 $color: blue;
 $background: whitesmoke;
 $color: red;
-$background: honeydew;
-$color: coral;
+$background: coral;
+$color: honeydew;
 $font-family: 16px;
 $font-size: 16px;
 $line-height: 20px;
@@ -28,10 +28,12 @@ $button-text-align: left;
 %button-interaction {
   box-shadow: 0 0 0 0 $border-color;
   outline: none;
+  transition: background-color 100ms, box-shadow 100ms, color 100ms, transform 100ms;
 
   &:focus,
   &:hover {
     box-shadow: $border-width $border-width 0 0 $border-color;
+    transform: translate(-$border-width, -$border-width);
   }
 }
 
