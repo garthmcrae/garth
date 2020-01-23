@@ -1,5 +1,6 @@
 @import 'variables';
 
 .cell {
+  box-sizing: border-box;
   padding: $padding;
 }
