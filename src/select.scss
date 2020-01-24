@@ -1,0 +1,47 @@
+@import 'variables';
+
+.select {
+  position: relative;
+  height: 34px;
+}
+
+.options {
+  background: $background;
+  border: $button-border;
+  position: absolute;
+  width: 100%;
+}
+
+.options > input {
+  appearance: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.options > label {
+  border: none;
+  box-sizing: border-box;
+  color: $button-color;
+  cursor: pointer;
+  display: block;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  padding: $button-padding;
+  text-align: $button-text-align;
+  text-decoration: none;
+  width: 100%;
+  z-index: 1;
+}
+
+.options.inactive > label {
+  display: none;
+}
+
+.options > input:checked + label {
+  display: block;
+}
+
+.options > input:focus + label {
+  background: $button-background;
+}

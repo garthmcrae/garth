@@ -20,6 +20,7 @@ $width: 240px;
   transition: right 0.3s ease-in-out;
   right: 0;
   width: $width;
+  z-index: 1;
 
   @media (min-width: 768px) {
     border-left: 0 solid;

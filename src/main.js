@@ -13,6 +13,7 @@ import ListItem from './ListItem';
 import Paragraph from './Paragraph';
 import Root from './Root';
 import Rule from './Rule';
+import Select from './Select';
 import Sidebar from './Sidebar';
 import SidebarContent from './SidebarContent';
 import SidebarMenu from './SidebarMenu';
@@ -34,6 +35,7 @@ export {
   Paragraph,
   Root,
   Rule,
+  Select,
   Sidebar,
   SidebarContent,
   SidebarMenu,

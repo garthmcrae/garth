@@ -27,13 +27,14 @@ $button-padding: $padding;
 $button-text-align: left;
 
 %button-active {
+  animation: pulse $duration infinite;
   box-shadow: $border-width $border-width 0 0 $border-color;
   transform: translate(-$border-width, -$border-width);
 }
 
 %button-checked {
-  box-shadow: $border-width * 2 $border-width * 2 0 0 $border-color;
-  transform: translate(-$border-width * 2, -$border-width * 2);
+  box-shadow: $border-width * 3 $border-width * 3 0 0 $border-color;
+  transform: translate(-$border-width * 3, -$border-width * 2);
 }
 
 %button-interaction {
@@ -44,6 +45,18 @@ $button-text-align: left;
   &:focus,
   &:hover {
     @extend %button-active;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background: rgba($color, 0);
+  }
+  50% {
+    background: rgba($color, .1);
+  }
+  100% {
+    background: rgba($color, 0);
   }
 }
 
