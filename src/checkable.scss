@@ -1,7 +1,12 @@
 @import 'variables';
 
-.button {
-  appearance: none;
+.input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.label {
   background: $button-background;
   border: $button-border;
   box-sizing: border-box;
@@ -13,7 +18,18 @@
   padding: $button-padding;
   text-align: $button-text-align;
   text-decoration: none;
+  user-select: none;
   width: 100%;
 
   @extend %button-interaction;
+}
+
+.input {
+  &:checked + .label {
+    @extend %button-checked;
+  }
+
+  &:focus + .label {
+    @extend %button-active;
+  }
 }

@@ -2,7 +2,9 @@ import Anchor from './Anchor';
 import Border from './Border';
 import Button from './Button';
 import Cell from './Cell';
+import Checkable from './Checkable';
 import Container from './Container';
+import Expander from './Expander';
 import Footer from './Footer';
 import Header from './Header';
 import Layout from './Layout';
@@ -21,7 +23,9 @@ export {
   Border,
   Button,
   Cell,
+  Checkable,
   Container,
+  Expander,
   Footer,
   Header,
   Layout,

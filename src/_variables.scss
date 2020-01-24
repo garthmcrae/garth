@@ -7,6 +7,7 @@ $background: coral;
 $color: honeydew;
 $background: whitesmoke;
 $color: red;
+$duration: 200ms;
 $font-family: 16px;
 $font-size: 16px;
 $line-height: 20px;
@@ -25,15 +26,24 @@ $button-font-weight: 600;
 $button-padding: $padding;
 $button-text-align: left;
 
+%button-active {
+  box-shadow: $border-width $border-width 0 0 $border-color;
+  transform: translate(-$border-width, -$border-width);
+}
+
+%button-checked {
+  box-shadow: $border-width * 2 $border-width * 2 0 0 $border-color;
+  transform: translate(-$border-width * 2, -$border-width * 2);
+}
+
 %button-interaction {
   box-shadow: 0 0 0 0 $border-color;
   outline: none;
-  transition: background-color 100ms, box-shadow 100ms, color 100ms, transform 100ms;
+  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
 
   &:focus,
   &:hover {
-    box-shadow: $border-width $border-width 0 0 $border-color;
-    transform: translate(-$border-width, -$border-width);
+    @extend %button-active;
   }
 }
 
