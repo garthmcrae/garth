@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { Fragment, useRef, useState } from 'react';
 import styles from './select.scss';
+import useOnClickOutside from './useOnClickOutside';
 
 const Select = props => {
+  const ref = useRef(null);
   const [active, setActive] = React.useState(false);
   const [value, setValue] = React.useState('');
-  const handleBlur = event => null;
   const handleClick = event => {
     setActive(!active);
   };
@@ -16,38 +17,33 @@ const Select = props => {
       setActive(!active);
     }
   };
-  const { label = '', name = 'select', options = [] } = props;
+  useOnClickOutside(ref, () => setActive(false));
+  const { inputRef, label = '', name = 'select', options = [] } = props;
   return (
-    <>
-      <div>
-        {label} {active ? 'true' : 'false'} {value}
+    <div id={name} className={styles.select} ref={ref}>
+      <div className={`${styles.options} ${active ? styles.active : styles.inactive}`}>
+        {options.map((option, index) => {
+          return (
+            <Fragment key={`${name}-${index}`}>
+              <input
+                checked={value === option.value}
+                id={`${name}-${index}`}
+                name={name}
+                onChange={handleFocus}
+                onFocus={handleFocus}
+                onKeyPress={handleKeyPress}
+                ref={inputRef}
+                type="radio"
+                value={option.value}
+              />
+              <label htmlFor={`${name}-${index}`} onClick={handleClick}>
+                {option.label}
+              </label>
+            </Fragment>
+          );
+        })}
       </div>
-      <div id={name} className={styles.select}>
-        <div className={`${styles.options} ${active ? styles.active : styles.inactive}`}>
-          {options.map((option, index) => {
-            const id = `${name}-${index}`;
-            return (
-              <React.Fragment key={option.value}>
-                <input
-                  checked={value === option.value}
-                  id={id}
-                  name={name}
-                  onBlur={handleBlur}
-                  onChange={handleFocus}
-                  onFocus={handleFocus}
-                  onKeyPress={handleKeyPress}
-                  type="radio"
-                  value={option.value}
-                />
-                <label htmlFor={id} onClick={handleClick}>
-                  {option.label}
-                </label>
-              </React.Fragment>
-            );
-          })}
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

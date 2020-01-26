@@ -1,13 +1,12 @@
 @import 'variables';
 
 .select {
+  height: ($border-width + $button-padding) * 2 + $line-height;
   position: relative;
-  height: 34px;
+  z-index: 1;
 }
 
 .options {
-  background: $background;
-  border: $button-border;
   position: absolute;
   width: 100%;
 }
@@ -19,19 +18,23 @@
 }
 
 .options > label {
-  border: none;
+  background: $background;
+  border: $button-border;
   box-sizing: border-box;
   color: $button-color;
   cursor: pointer;
   display: block;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
-  line-height: 1;
+  margin-bottom: -$border-width;
   padding: $button-padding;
   text-align: $button-text-align;
   text-decoration: none;
+  user-select: none;
   width: 100%;
   z-index: 1;
+
+  @extend %button-interaction;
 }
 
 .options.inactive > label {
@@ -43,5 +46,5 @@
 }
 
 .options > input:focus + label {
-  background: $button-background;
+  @extend %button-checked;
 }

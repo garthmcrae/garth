@@ -4,9 +4,11 @@ import Button from './Button';
 import Cell from './Cell';
 import Checkable from './Checkable';
 import Container from './Container';
-import Expander from './Expander';
+import Expand from './Expand';
 import Footer from './Footer';
 import Header from './Header';
+import Input from './Input';
+import Label from './Label';
 import Layout from './Layout';
 import List from './List';
 import ListItem from './ListItem';
@@ -26,9 +28,11 @@ export {
   Cell,
   Checkable,
   Container,
-  Expander,
+  Expand,
   Footer,
   Header,
+  Input,
+  Label,
   Layout,
   List,
   ListItem,

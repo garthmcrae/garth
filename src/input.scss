@@ -1,6 +1,6 @@
 @import 'variables';
 
-.button {
+.input {
   appearance: none;
   background: $button-background;
   border: $button-border;
@@ -17,15 +17,9 @@
   text-decoration: none;
   width: 100%;
 
-  @extend %button-interaction;
+  @extend %input-interaction ;
 
-  // // disabled state
-  // background-size: $border-width;
-  // background: repeating-linear-gradient(
-  //   45deg,
-  //   $border-color,
-  //   $border-color $border-width,
-  //   transparent $border-width,
-  //   transparent $border-width * 2
-  // );
+  &::placeholder {
+    color: currentColor;
+  }
 }

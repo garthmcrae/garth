@@ -1,10 +1,11 @@
-import external from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss'
-import url from 'rollup-plugin-url'
+import autoprefixer from 'autoprefixer';
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
+import external from 'rollup-plugin-peer-deps-external'
 import pkg from './package.json';
+import postcss from 'rollup-plugin-postcss'
+import resolve from 'rollup-plugin-node-resolve';
+import url from 'rollup-plugin-url'
 
 export default {
 	input: 'src/main.js',
@@ -12,6 +13,9 @@ export default {
 		external(),
 		postcss({
 			modules: true,
+      plugins: [
+        autoprefixer(),
+      ],
 		}),
 		url(),
 		babel({

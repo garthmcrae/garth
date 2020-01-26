@@ -1,4 +1,5 @@
 $border-color: currentColor;
+$border-radius: 0;
 $border-style: solid;
 $border-width: 2px;
 $background: pink;
@@ -7,7 +8,7 @@ $background: coral;
 $color: honeydew;
 $background: whitesmoke;
 $color: red;
-$duration: 200ms;
+$duration: 150ms;
 $font-family: 16px;
 $font-size: 16px;
 $line-height: 20px;
@@ -20,6 +21,7 @@ $anchor-color: currentColor;
 
 $button-background: transparent;
 $button-border: $border;
+$button-border-radius: $border-radius;
 $button-color: currentColor;
 $button-font-size: inherit;
 $button-font-weight: 600;
@@ -27,20 +29,23 @@ $button-padding: $padding;
 $button-text-align: left;
 
 %button-active {
-  animation: pulse $duration infinite;
   box-shadow: $border-width $border-width 0 0 $border-color;
   transform: translate(-$border-width, -$border-width);
 }
 
 %button-checked {
   box-shadow: $border-width * 3 $border-width * 3 0 0 $border-color;
-  transform: translate(-$border-width * 3, -$border-width * 2);
+  transform: translate(-$border-width * 3, -$border-width * 3);
+}
+
+%button-inactive {
+  box-shadow: 0 0 0 0 $border-color;
+  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
 }
 
 %button-interaction {
-  box-shadow: 0 0 0 0 $border-color;
   outline: none;
-  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
+  @extend %button-inactive;
 
   &:focus,
   &:hover {
@@ -48,15 +53,15 @@ $button-text-align: left;
   }
 }
 
-@keyframes pulse {
-  0% {
-    background: rgba($color, 0);
-  }
-  50% {
-    background: rgba($color, .1);
-  }
-  100% {
-    background: rgba($color, 0);
+%input-interaction {
+  outline: none;
+  box-shadow: inset $border-width  $border-width 0 0  $border-color, 0 0 0 0 $border-color;
+  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
+
+  &:focus,
+  &:hover {
+  box-shadow: inset 0 0 0 0 $border-color, $border-width $border-width 0 0 $border-color;
+  transform: translate(-$border-width, -$border-width);
   }
 }
 

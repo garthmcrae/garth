@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Expander = props => {
+const Expand = props => {
   const { children, duration = 200, expand } = props;
   const [height, setHeight] = useState(0);
   const ref = useRef(null);
@@ -18,7 +18,6 @@ const Expander = props => {
 
   const transitionHeight = {
     background: 'whitesmoke',
-    overflow: 'hidden',
     transition: `max-height ${duration}ms ease-in-out ${expand ? 0 : duration}ms`,
   };
 
@@ -27,7 +26,7 @@ const Expander = props => {
   };
 
   return (
-    <div style={{ maxHeight: expand ? height : 0, ...transitionHeight }}>
+    <div style={{ maxHeight: expand ? height : 0, overflow: expand ? 'visible' : 'hidden', ...transitionHeight }}>
       <div style={{ opacity: expand ? 1 : 0, ...transitionOpacity }}>
         <div ref={ref}>{children}</div>
       </div>
@@ -35,4 +34,4 @@ const Expander = props => {
   );
 };
 
-export default Expander;
+export default Expand;
