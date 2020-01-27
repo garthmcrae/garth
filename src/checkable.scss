@@ -9,27 +9,45 @@
 .label {
   background: $button-background;
   border: $button-border;
+  border-radius: $border-radius;
   box-sizing: border-box;
   color: $button-color;
   cursor: pointer;
   display: block;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
-  padding: $button-padding;
+  padding: $button-padding $button-padding $button-padding ($button-padding * 2) + $line-height;
+  position: relative;
   text-align: $button-text-align;
   text-decoration: none;
   user-select: none;
   width: 100%;
 
   @extend %button-interaction;
+
+  &:before {
+    border: $button-border;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: $line-height;
+    left: $button-padding;
+    top: $button-padding;
+    position: absolute;
+    width: $line-height;
+  }
 }
 
 .input {
   &:checked + .label {
-    @extend %button-checked;
+
+    &:before {
+      background: $button-color;
+    }
+
   }
 
   &:focus + .label {
-    @extend %button-active;
+    @extend %button-focus;
   }
 }

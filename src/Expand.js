@@ -17,7 +17,6 @@ const Expand = props => {
   }, [setHeight]);
 
   const transitionHeight = {
-    background: 'whitesmoke',
     transition: `max-height ${duration}ms ease-in-out ${expand ? 0 : duration}ms`,
   };
 

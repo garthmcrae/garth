@@ -27,18 +27,54 @@
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   margin-bottom: -$border-width;
-  padding: $button-padding;
+  overflow: hidden;
+  padding: $button-padding ($button-padding * 2) + $line-height $button-padding $button-padding;
+  position: relative;
   text-align: $button-text-align;
   text-decoration: none;
+  text-overflow: ellipsis;
   user-select: none;
+  white-space: nowrap;
   width: 100%;
   z-index: 1;
 
   @extend %button-interaction;
 }
 
+$decrease: 4px;
+
 .options.inactive > label {
+  border-radius: $border-radius;
   display: none;
+
+  // &:before {
+  //   background: $button-color;
+  //   border: $button-border;
+  //   box-sizing: border-box;
+  //   content: "";
+  //   display: block;
+  //   height: $line-height - $border-width * 6;
+  //   right: $button-padding + $border-width * 3;
+  //   top: $button-padding + $border-width * 3;
+  //   position: absolute;
+  //   width: $line-height - $border-width * 6;
+  //   z-index: 1;
+  // }
+
+  &:before {
+    border-color: $border-color transparent transparent transparent;
+    border-style: solid;
+    border-width: $line-height ($line-height / 0.866) / 2 0 ($line-height / 0.866) / 2;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: $line-height;
+    right: $button-padding;
+    top: $button-padding;
+    position: absolute;
+    width: $line-height;
+    z-index: 1;
+  }  
 }
 
 .options > input:checked + label {
@@ -46,5 +82,5 @@
 }
 
 .options > input:focus + label {
-  @extend %button-checked;
+  @extend %button-focus;
 }
