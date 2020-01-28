@@ -17,7 +17,7 @@
   text-decoration: none;
   width: 100%;
 
-  @extend %input-interaction ;
+  @extend %input-interaction;
 
   &::placeholder {
     color: currentColor;

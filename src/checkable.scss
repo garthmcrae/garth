@@ -28,7 +28,7 @@
   &:before {
     border: $button-border;
     box-sizing: border-box;
-    content: "";
+    content: '';
     display: block;
     height: $line-height;
     left: $button-padding;
@@ -40,11 +40,9 @@
 
 .input {
   &:checked + .label {
-
     &:before {
       background: $button-color;
     }
-
   }
 
   &:focus + .label {

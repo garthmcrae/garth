@@ -66,7 +66,7 @@ $decrease: 4px;
     border-style: solid;
     border-width: $line-height ($line-height / 0.866) / 2 0 ($line-height / 0.866) / 2;
     box-sizing: border-box;
-    content: "";
+    content: '';
     display: block;
     height: $line-height;
     right: $button-padding;
@@ -74,7 +74,7 @@ $decrease: 4px;
     position: absolute;
     width: $line-height;
     z-index: 1;
-  }  
+  }
 }
 
 .options > input:checked + label {
