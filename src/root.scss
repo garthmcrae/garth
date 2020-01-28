@@ -1,5 +1,9 @@
 @import 'variables';
 
+html {
+  background: $background;
+}
+
 .root {
   background: $background;
   color: $color;

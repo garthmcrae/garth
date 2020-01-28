@@ -11,7 +11,7 @@
   display: block;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
-  line-height: 1;
+  line-height: $line-height;
   padding: $button-padding;
   text-align: $button-text-align;
   text-decoration: none;

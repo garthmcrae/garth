@@ -25,34 +25,26 @@ $button-background: transparent;
 $button-border: $border;
 $button-border-radius: $border-radius;
 $button-color: currentColor;
+$button-elevation: 4px;
 $button-font-size: inherit;
 $button-font-weight: 600;
 $button-padding: $padding;
 $button-text-align: left;
 
-%button-active {
-  box-shadow: 0 0 0 0 $border-color;
+%button-default {
+  box-shadow: $button-elevation $button-elevation 0 0 $border-color;
   transform: translate(0, 0);
-}
-
-%button-checked {
-  box-shadow: $border-width * 3 $border-width * 3 0 0 $border-color;
-  transform: translate(-$border-width * 3, -$border-width * 3);
+  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
 }
 
 %button-focus {
-  box-shadow: $border-width * 2 $border-width * 2 0 0 $border-color;
-  transform: translate(-$border-width, -$border-width);
-}
-
-%button-inactive {
-  box-shadow: $border-width $border-width 0 0 $border-color;
-  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
+  box-shadow: $button-elevation * 2 $button-elevation * 2 0 0 $border-color;
+  transform: translate(-$button-elevation, -$button-elevation);
 }
 
 %button-interaction {
   outline: none;
-  @extend %button-inactive;
+  @extend %button-default;
 
   &:focus,
   &:hover {
@@ -62,7 +54,7 @@ $button-text-align: left;
 
 %input-interaction {
   outline: none;
-  @extend %button-inactive;
+  @extend %button-default;
 
   &:focus,
   &:hover {
@@ -71,6 +63,9 @@ $button-text-align: left;
 }
 
 %link-interaction {
+  outline: $border-width $border-style transparent;
+  transition: background-color $duration, color $duration, outline $duration;
+
   &:focus,
   &:hover {
     background: $color;
