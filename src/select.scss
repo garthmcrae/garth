@@ -28,7 +28,7 @@
   font-weight: $button-font-weight;
   margin-bottom: -$border-width;
   overflow: hidden;
-  padding: $button-padding ($button-padding * 2) + $line-height $button-padding $button-padding;
+  padding: $button-padding ($button-padding * 2) + $line-height / 0.866 $button-padding $button-padding;
   position: relative;
   text-align: $button-text-align;
   text-decoration: none;
@@ -46,20 +46,6 @@ $decrease: 4px;
 .options.inactive > label {
   border-radius: $border-radius;
   display: none;
-
-  // &:before {
-  //   background: $button-color;
-  //   border: $button-border;
-  //   box-sizing: border-box;
-  //   content: "";
-  //   display: block;
-  //   height: $line-height - $border-width * 6;
-  //   right: $button-padding + $border-width * 3;
-  //   top: $button-padding + $border-width * 3;
-  //   position: absolute;
-  //   width: $line-height - $border-width * 6;
-  //   z-index: 1;
-  // }
 
   &:before {
     border-color: $border-color transparent transparent transparent;
