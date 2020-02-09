@@ -18,7 +18,7 @@ const Select = props => {
     }
   };
   useOnClickOutside(ref, () => setActive(false));
-  const { inputRef, label = '', name = 'select', options = [] } = props;
+  const { disabled, label = '', name = 'select', options = [] } = props;
   return (
     <div id={name} className={styles.select} ref={ref}>
       <div className={`${styles.options} ${active ? styles.active : styles.inactive}`}>
@@ -27,14 +27,15 @@ const Select = props => {
             <Fragment key={`${name}-${index}`}>
               <input
                 checked={value === option.value}
+                disabled={disabled}
                 id={`${name}-${index}`}
                 name={name}
                 onChange={handleFocus}
                 onFocus={handleFocus}
                 onKeyPress={handleKeyPress}
-                ref={inputRef}
                 type="radio"
                 value={option.value}
+                {...option.props}
               />
               <label htmlFor={`${name}-${index}`} onClick={handleClick}>
                 {option.label}
