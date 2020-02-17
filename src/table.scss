@@ -1,0 +1,31 @@
+@import 'variables';
+
+.table {
+  border: $border;
+  border-collapse: separate;  
+  border-spacing: $border-width;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+
+  th {
+    background: $color;
+    border: $border-width $border-style $color;
+    color: $background;
+    padding: $padding;
+    vertical-align: top;
+  }
+
+  td {
+    border: $border;
+    padding: $padding;
+    vertical-align: top;
+  }
+
+  caption {
+    caption-side: bottom;
+    margin-top: $margin;
+    text-align: left;
+  }
+}

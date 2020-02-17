@@ -8,7 +8,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import url from 'rollup-plugin-url'
 
 export default {
-	input: 'src/main.js',
+	input: 'src/index.js',
 	plugins: [
 		external(),
 		postcss({

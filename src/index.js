@@ -1,47 +1,49 @@
 import Anchor from './Anchor';
 import Border from './Border';
 import Button from './Button';
-import Cell from './Cell';
+import Box from './Box';
 import Checkable from './Checkable';
 import Container from './Container';
 import Expand from './Expand';
+import Flex from './Flex';
 import Footer from './Footer';
 import Header from './Header';
 import Input from './Input';
 import Label from './Label';
-import Layout from './Layout';
 import List from './List';
 import ListItem from './ListItem';
 import Paragraph from './Paragraph';
 import Root from './Root';
 import Rule from './Rule';
 import Select from './Select';
-import Sidebar from './Sidebar';
-import SidebarContent from './SidebarContent';
-import SidebarMenu from './SidebarMenu';
+import SidebarLayout from './SidebarLayout';
+import SidebarMain from './SidebarMain';
+import SidebarNav from './SidebarNav';
+import Table from './Table';
 import Title from './Title';
 
 export {
   Anchor,
   Border,
   Button,
-  Cell,
+  Box,
   Checkable,
   Container,
   Expand,
+  Flex,
   Footer,
   Header,
   Input,
   Label,
-  Layout,
   List,
   ListItem,
   Paragraph,
   Root,
   Rule,
   Select,
-  Sidebar,
-  SidebarContent,
-  SidebarMenu,
+  SidebarLayout,
+  SidebarMain,
+  SidebarNav,
+  Table,
   Title,
 };

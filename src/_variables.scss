@@ -4,13 +4,13 @@ $background: honeydew;
 $color: coral;
 $background: whitesmoke;
 $color: red;
-$background: darkkhaki;
+$background: yellowgreen;
 $color: darkolivegreen;
 $border-color: currentColor;
 $border-radius: 0;
 $border-style: solid;
 $border-width: 2px;
-$box-shadow-color: olive;
+$box-shadow-color: olivedrab;
 $duration: 150ms;
 $font-family: 16px;
 $font-size: 16px;
@@ -31,6 +31,23 @@ $button-font-size: inherit;
 $button-font-weight: 600;
 $button-padding: $padding;
 $button-text-align: left;
+
+$sidebar-width: 240px;
+
+// new wave
+$background: blue;
+$color: cyan;
+$border-color: lime;
+$box-shadow-color: magenta;
+
+// bank
+// $background: white;
+// $color: black;
+// $border-color: black;
+// $border-radius: 4px;
+// $box-shadow-color: black;
+// $button-background: yellow;
+// $button-border-radius: $border-radius;
 
 %button-default {
   box-shadow: $button-elevation $button-elevation 0 0 $box-shadow-color;

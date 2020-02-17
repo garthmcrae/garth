@@ -1,19 +1,19 @@
 @import 'variables';
 
-.cell {
+.box {
   box-sizing: border-box;
   padding: $padding;
 }
 
 @media (min-width: 768px) {
-  .cell {
+  .box {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
   }
 
   @for $i from 1 through 12 {
-    .cell-#{$i} {
+    .width-#{$i} {
       flex-basis: (100% * $i / 12);
       flex-grow: 0;
       flex-shrink: 0;

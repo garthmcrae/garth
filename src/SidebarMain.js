@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from './sidebar.scss';
+import styles from './sidebar-main.scss';
 
-const SidebarContent = props => {
+const SidebarMain = props => {
   const { children } = props;
   return <main className={styles.main}>{children}</main>;
 };
 
-export default SidebarContent;
+export default SidebarMain;

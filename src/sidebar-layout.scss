@@ -1,0 +1,8 @@
+@import 'variables';
+
+.layout {
+  @media (min-width: 768px) {
+    display: flex;
+    min-height: calc(100vh - #{($border-width * 2) + ($font-size * 2) + ($padding * 4)});
+  }
+}

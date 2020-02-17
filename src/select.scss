@@ -48,7 +48,7 @@ $decrease: 4px;
   display: none;
 
   &:before {
-    border-color: $border-color transparent transparent transparent;
+    border-color: $color transparent transparent transparent;
     border-style: solid;
     border-width: $line-height ($line-height / 0.866) / 2 0 ($line-height / 0.866) / 2;
     box-sizing: border-box;
