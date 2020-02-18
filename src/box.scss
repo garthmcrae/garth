@@ -3,6 +3,14 @@
 .box {
   box-sizing: border-box;
   padding: $padding;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 768px) {

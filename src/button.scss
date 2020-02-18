@@ -9,6 +9,7 @@
   color: $button-color;
   cursor: default;
   display: block;
+  font-family: inherit;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   line-height: $line-height;
@@ -18,14 +19,4 @@
   width: 100%;
 
   @extend %button-interaction;
-
-  // // disabled state
-  // background-size: $border-width;
-  // background: repeating-linear-gradient(
-  //   45deg,
-  //   $border-color,
-  //   $border-color $border-width,
-  //   transparent $border-width,
-  //   transparent $border-width * 2
-  // );
 }
