@@ -33,20 +33,19 @@
 }
 
 .bun {
-  appearance: none;
-  background: $background;
-  border: $border-width $border-style;
-  border-radius: $border-radius;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: pointer;
-  display: block;
-  padding: $padding;
+  @include button-shared;
+  cursor: $button-cursor;
+  padding: $button-padding;
   position: fixed;
   right: $margin;
   top: $margin;
 
-  @extend %button-interaction;
+  @include button-default;
+
+  &:focus,
+  &:hover {
+    @include button-active;
+  }
 
   @media (min-width: 768px) {
     display: none;

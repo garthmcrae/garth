@@ -7,26 +7,23 @@
 }
 
 .label {
-  background: $button-background;
-  border: $button-border;
-  border-radius: $border-radius;
-  box-sizing: border-box;
-  color: $button-color;
-  cursor: pointer;
-  display: block;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
+  @include button-shared;
   padding: $button-padding $button-padding $button-padding ($button-padding * 2) + $line-height;
   position: relative;
-  text-align: $button-text-align;
-  text-decoration: none;
-  user-select: none;
-  width: 100%;
+  width: $button-width;
 
-  @extend %button-interaction;
+  @include button-default;
+
+  &:focus,
+  &:hover {
+    @include button-active;
+  }
 
   &:before {
-    border: $button-border;
+    border-color: $button-border-color;
+    border-radius: $button-border-radius;
+    border-style: $button-border-style;
+    border-width: $button-border-width;
     box-sizing: border-box;
     content: '';
     display: block;
@@ -46,6 +43,6 @@
   }
 
   &:focus + .label {
-    @extend %button-focus;
+    @include button-active;
   }
 }

@@ -1,5 +1,7 @@
 @import 'variables';
 
 .border {
-  border: $border;
+  border-color: $border-color;
+  border-style: $border-style;
+  border-width: $border-width;
 }

@@ -1,9 +1,10 @@
 @import 'variables';
 
 .anchor {
-  color: $anchor-color;
-  cursor: default;
-  user-select: none;
+  @include link-default;
 
-  @extend %link-interaction;
+  &:focus,
+  &:hover {
+    @include link-active;
+  }
 }

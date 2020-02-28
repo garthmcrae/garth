@@ -1,7 +1,9 @@
 @import 'variables';
 
 .table {
-  border: $border;
+  border-color: $border-color;
+  border-style: $border-style;
+  border-width: $border-width;
   border-collapse: separate;
   border-spacing: $border-width;
   margin: 0;
@@ -9,21 +11,25 @@
   text-align: left;
   width: 100%;
 
-  th {
+  > thead > tr > th {
     background: $color;
-    border: $border-width $border-style $color;
+    border-color: $color;
+    border-style: $border-style;
+    border-width: $border-width;
     color: $background;
     padding: $padding;
     vertical-align: top;
   }
 
-  td {
-    border: $border;
+  > tbody > tr > td {
+    border-color: $border-color;
+    border-style: $border-style;
+    border-width: $border-width;
     padding: $padding;
     vertical-align: top;
   }
 
-  caption {
+  > caption {
     caption-side: bottom;
     margin-top: $margin;
     text-align: left;

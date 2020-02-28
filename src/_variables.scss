@@ -1,93 +1,79 @@
 $background: pink;
-$color: blue;
-$background: honeydew;
-$color: coral;
-$background: whitesmoke;
-$color: red;
-$background: yellowgreen;
-$color: darkolivegreen;
 $border-color: currentColor;
 $border-radius: 0;
 $border-style: solid;
 $border-width: 2px;
-$box-shadow-color: olivedrab;
-$duration: 150ms;
+$box-shadow-color: magenta;
+$color: blue;
 $font-family: 16px;
 $font-size: 16px;
+$font-weight: 400;
 $line-height: 20px;
-
-$border: $border-width $border-style $border-color;
 $margin: 16px;
 $padding: 16px;
+$transition-duration: 150ms;
 
-$anchor-color: currentColor;
-
-$button-background: transparent;
-$button-border: $border;
+$button-background: $background;
+$button-border-color: $border-color;
 $button-border-radius: $border-radius;
+$button-border-style: $border-style;
+$button-border-width: $border-width;
+$button-box-sizing: border-box;
 $button-color: currentColor;
+$button-cursor: default;
+$button-display: block;
 $button-elevation: 4px;
 $button-font-size: inherit;
 $button-font-weight: 600;
+$button-line-height: $line-height;
 $button-padding: $padding;
 $button-text-align: left;
+$button-text-decoration: none;
+$button-user-select: none;
+$button-width: 100%;
 
 $sidebar-width: 240px;
 
-// new wave
-$background: blue;
-$color: cyan;
-$border-color: lime;
-$box-shadow-color: magenta;
-
-// bank
-// $background: white;
-// $color: black;
-// $border-color: black;
-// $border-radius: 4px;
-// $box-shadow-color: black;
-// $button-background: yellow;
-// $button-border-radius: $border-radius;
-
-%button-default {
-  box-shadow: $button-elevation $button-elevation 0 0 $box-shadow-color;
-  transform: translate(0, 0);
-  transition: background-color $duration, box-shadow $duration, color $duration, transform $duration;
+@mixin link-default {
+  background: $background;
+  color: $color;
+  outline: $border-width $border-style transparent;
+  transition: background-color $transition-duration, color $transition-duration, outline $transition-duration;
+  user-select: none;
 }
 
-%button-focus {
+@mixin link-active {
+  background: $color;
+  color: $background;
+  outline: $border-width $border-style $color;
+}
+
+@mixin button-shared {
+  background: $button-background;
+  border-color: $button-border-color;
+  border-radius: $button-border-radius;
+  border-style: $button-border-style;
+  border-width: $button-border-width;
+  box-sizing: $button-box-sizing;
+  color: $button-color;
+  display: $button-display;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  text-align: $button-text-align;
+  text-decoration: $button-text-decoration;
+}
+
+@mixin button-default {
+  appearance: none;
+  box-shadow: $button-elevation $button-elevation 0 0 $box-shadow-color;
+  outline: none;
+  transform: translate(0, 0);
+  transition: background-color $transition-duration, box-shadow $transition-duration, color $transition-duration,
+    transform $transition-duration;
+}
+
+@mixin button-active {
   box-shadow: $button-elevation * 2 $button-elevation * 2 0 0 $box-shadow-color;
   transform: translate(-$button-elevation, -$button-elevation);
-}
-
-%button-interaction {
-  outline: none;
-  @extend %button-default;
-
-  &:focus,
-  &:hover {
-    @extend %button-focus;
-  }
-}
-
-%input-interaction {
-  outline: none;
-  @extend %button-default;
-
-  &:focus,
-  &:hover {
-    @extend %button-focus;
-  }
-}
-
-%link-interaction {
-  outline: $border-width $border-style transparent;
-  transition: background-color $duration, color $duration, outline $duration;
-
-  &:focus,
-  &:hover {
-    background: $color;
-    color: $background;
-    outline: $border-width $border-style $color;
-  }
 }

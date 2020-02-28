@@ -1,7 +1,7 @@
 @import 'variables';
 
 .select {
-  height: ($border-width + $button-padding) * 2 + $line-height;
+  height: ($border-width + $button-padding) * 2 + $button-line-height;
   position: relative;
   z-index: 1;
 }
@@ -18,48 +18,40 @@
 }
 
 .options > label {
-  background: $background;
-  border: $button-border;
-  box-sizing: border-box;
-  color: $button-color;
-  cursor: pointer;
-  display: block;
-  font-family: inherit;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
+  @include button-shared;
   margin-bottom: -$border-width;
   overflow: hidden;
-  padding: $button-padding ($button-padding * 2) + $line-height / 0.866 $button-padding $button-padding;
+  padding: $button-padding ($button-padding * 2) + $button-line-height / 0.866 $button-padding $button-padding;
   position: relative;
-  text-align: $button-text-align;
-  text-decoration: none;
   text-overflow: ellipsis;
-  user-select: none;
+  width: $button-width;
   white-space: nowrap;
-  width: 100%;
   z-index: 1;
 
-  @extend %button-interaction;
-}
+  @include button-default;
 
-$decrease: 4px;
+  &:focus,
+  &:hover {
+    @include button-active;
+  }
+}
 
 .options.inactive > label {
   border-radius: $border-radius;
   display: none;
 
   &:before {
-    border-color: $color transparent transparent transparent;
+    border-color: $button-color transparent transparent transparent;
     border-style: solid;
-    border-width: $line-height ($line-height / 0.866) / 2 0 ($line-height / 0.866) / 2;
+    border-width: $button-line-height ($button-line-height / 0.866) / 2 0 ($button-line-height / 0.866) / 2;
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $line-height;
+    height: $button-line-height;
     right: $button-padding;
     top: $button-padding;
     position: absolute;
-    width: $line-height;
+    width: $button-line-height;
     z-index: 1;
   }
 }
@@ -69,5 +61,5 @@ $decrease: 4px;
 }
 
 .options > input:focus + label {
-  @extend %button-focus;
+  @include button-active;
 }
