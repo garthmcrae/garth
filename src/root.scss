@@ -10,10 +10,5 @@ html {
   font-size: $font-size;
   line-height: $line-height;
   min-height: 100vh;
-  // filter: blur(0.5px);
-  // text-shadow: 1px 1px green, -1px -1px red;
-}
-
-pre {
-  margin: 0;
+  transition: background-color $transition-duration, color $transition-duration;
 }

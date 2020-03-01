@@ -3,6 +3,7 @@
 .button {
   @include button-shared;
   padding: $button-padding;
+  user-select: none;
   width: $button-width;
 
   @include button-default;

@@ -1,10 +1,10 @@
-$background: pink;
+$background: var(--background, blue);
 $border-color: currentColor;
 $border-radius: 0;
 $border-style: solid;
 $border-width: 2px;
-$box-shadow-color: magenta;
-$color: blue;
+$box-shadow-color: var(--box-shadow-color, cyan);
+$color: var(--color, yellow);
 $font-family: 16px;
 $font-size: 16px;
 $font-weight: 400;

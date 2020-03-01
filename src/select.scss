@@ -24,6 +24,7 @@
   padding: $button-padding ($button-padding * 2) + $button-line-height / 0.866 $button-padding $button-padding;
   position: relative;
   text-overflow: ellipsis;
+  user-select: none;
   width: $button-width;
   white-space: nowrap;
   z-index: 1;

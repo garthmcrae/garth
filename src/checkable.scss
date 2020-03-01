@@ -10,6 +10,7 @@
   @include button-shared;
   padding: $button-padding $button-padding $button-padding ($button-padding * 2) + $line-height;
   position: relative;
+  user-select: none;
   width: $button-width;
 
   @include button-default;
