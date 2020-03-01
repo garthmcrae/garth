@@ -36,9 +36,10 @@
   "scripts": {
     "build": "rollup -c",
     "deploy": "npm run build && npm version patch && npm publish",
-    "postversion": "git push && npm run build && npm publish",
+    "postversion": "git push && git push --tags && npm publish",
     "prettier": "prettier --write src/**/*.{js,scss}",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "version": "npm run build"
   },
   "files": [
     "dist"
