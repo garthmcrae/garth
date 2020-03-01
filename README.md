@@ -25,8 +25,6 @@ const Example = props => <Button />;
 
 ##### Required Peer Dependencies
 
-These libraries are not bundled with Reactstrap and required at runtime:
-
   * [**react**](https://www.npmjs.com/package/react)
   * [**react-dom**](https://www.npmjs.com/package/react-dom)
 
