@@ -1,6 +1,6 @@
 {
   "name": "garth",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "license": "MIT",
   "main": "dist/main.cjs.js",
   "module": "dist/main.esm.js",
