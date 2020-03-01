@@ -1,5 +1,26 @@
 {
   "name": "garth",
+  "homepage": "https://www.garth.link",
+  "description": "Responsive, mobile-first user interface components for React.",
+  "author": {
+    "name": "Garth McRae",
+    "email": "garthmcrae@gmail.com",
+    "url": "https://www.garth.link"
+  },
+  "keywords": [
+    "component",
+    "components",
+    "css",
+    "flexbox",
+    "framework",
+    "front-end",
+    "frontend",
+    "mobile-first",
+    "react",
+    "react-component",
+    "responsive",
+    "ui"
+  ],
   "version": "0.0.15",
   "license": "MIT",
   "main": "dist/main.cjs.js",

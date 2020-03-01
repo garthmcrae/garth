@@ -1,10 +1,10 @@
 # Garth
 
-Build responsive, mobile-first projects on the web with the world’s most popular Garth.
+Responsive, mobile-first user interface components for React.
 
 ## Getting Started
 
-Follow the [create-react-app instructions](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
+Follow the [create-react-app](https://create-react-app.dev/docs/getting-started) instructions.
 
 ### Install Garth
 
