@@ -2,8 +2,7 @@ $background: var(--background, white);
 $border-color: var(--border-color, currentColor);
 $border-radius: var(--border-radius, 0);
 $border-style: var(--border-style, solid);
-$border-width: var(--border-width, 2px);
-$box-shadow-color: var(--box-shadow-color, cyan);
+$border-width: var(--border-width, 1px);
 $color: var(--color, black);
 $duration: var(--duration, 150ms);
 $font-family: var(--font-family, 16px);
@@ -12,7 +11,14 @@ $font-weight: var(--font-weight, 400);
 $line-height: var(--line-height, 20px);
 $margin: var(--margin, 16px);
 $padding: var(--padding, 16px);
-$transition: var(--transition, background-color $duration, box-shadow $duration, color $duration, transform $duration);
+$transition: var(
+  --transition,
+  background-color $duration,
+  box-shadow $duration,
+  color $duration,
+  outline $duration,
+  transform $duration
+);
 
 $button-background: var(--button-background, $background);
 $button-border-color: var(--button-border-color, currentColor);
@@ -23,7 +29,6 @@ $button-box-sizing: border-box;
 $button-color: var(--button-color, currentColor);
 $button-cursor: default;
 $button-display: block;
-$button-elevation: 4px;
 $button-font-size: var(--button-font-size, inherit);
 $button-font-weight: var(--button-font-weight, 600);
 $button-line-height: var(--button-line-height, 20px);
@@ -50,7 +55,6 @@ $sidebar-width: 240px;
 }
 
 @mixin button-shared {
-  background: $button-background;
   border-color: $button-border-color;
   border-radius: $button-border-radius;
   border-style: $button-border-style;
@@ -64,17 +68,22 @@ $sidebar-width: 240px;
   line-height: $button-line-height;
   text-align: $button-text-align;
   text-decoration: $button-text-decoration;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @mixin button-default {
   appearance: none;
-  box-shadow: var(--button-default-box-shadow, $button-elevation $button-elevation 0 0 $box-shadow-color);
-  outline: none;
-  transform: var(--button-default-transform, translate(0, 0));
+  background: var(--button-default-background, white);
+  box-shadow: var(--button-default-box-shadow, none);
+  outline: var(--button-default-outline, none);
+  transform: var(--button-default-transform, none);
   transition: $transition;
 }
 
 @mixin button-active {
-  box-shadow: var(--button-active-box-shadow, $button-elevation * 2 $button-elevation * 2 0 0 $box-shadow-color);
-  transform: var(--button-default-transform, translate(-$button-elevation, -$button-elevation));
+  background: var(--button-active-background, white);
+  box-shadow: var(--button-active-box-shadow, none);
+  transform: var(--button-active-transform, none);
 }

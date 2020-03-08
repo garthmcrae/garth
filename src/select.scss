@@ -1,7 +1,7 @@
 @import 'variables';
 
 .select {
-  height: calc(#{$border-width} + #{$button-padding} * 2 + $button-line-height);
+  height: calc(#{$border-width} * 2 + #{$button-padding} * 2 + #{$button-line-height});
   position: relative;
   z-index: 1;
 }
@@ -20,13 +20,10 @@
 .options > label {
   @include button-shared;
   margin-bottom: calc(-1 * #{$border-width});
-  overflow: hidden;
   padding: $button-padding calc(#{$button-padding} * 2 + #{$button-line-height} / 0.866) $button-padding $button-padding;
   position: relative;
-  text-overflow: ellipsis;
   user-select: none;
   width: $button-width;
-  white-space: nowrap;
   z-index: 1;
 
   @include button-default;

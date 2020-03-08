@@ -2,5 +2,6 @@
 
 .label {
   display: block;
-  margin: 0 0 $font-size / 2;
+  line-height: $line-height;
+  margin: 0 0 calc(#{$font-size} / 2);
 }
