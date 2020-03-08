@@ -3,7 +3,7 @@
 .footer {
   border-top: $border-width $border-style;
   box-sizing: border-box;
-  line-height: 1;
+  line-height: $line-height;
   padding: $padding;
 }
 

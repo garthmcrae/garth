@@ -32,13 +32,14 @@
   }
 }
 
-.bun {
+.button {
   @include button-shared;
-  cursor: $button-cursor;
   padding: $button-padding;
   position: fixed;
   right: $margin;
   top: $margin;
+  user-select: none;
+  width: auto;
 
   @include button-default;
 
@@ -50,18 +51,4 @@
   @media (min-width: 768px) {
     display: none;
   }
-}
-
-.pickle,
-.cheese,
-.patty {
-  background: $color;
-  display: block;
-  height: $border-width;
-  margin: 0 auto;
-  width: $border-width * 5;
-}
-
-.cheese {
-  margin: $border-width auto;
 }

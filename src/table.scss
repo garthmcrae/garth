@@ -2,6 +2,7 @@
 
 .table {
   border-color: $border-color;
+  border-radius: $border-radius;
   border-style: $border-style;
   border-width: $border-width;
   border-collapse: separate;
@@ -14,6 +15,7 @@
   > thead > tr > th {
     background: $color;
     border-color: $color;
+    border-radius: $border-radius;
     border-style: $border-style;
     border-width: $border-width;
     color: $background;
@@ -23,6 +25,7 @@
 
   > tbody > tr > td {
     border-color: $border-color;
+    border-radius: $border-radius;
     border-style: $border-style;
     border-width: $border-width;
     padding: $padding;

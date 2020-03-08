@@ -8,7 +8,7 @@
 
 .label {
   @include button-shared;
-  padding: $button-padding $button-padding $button-padding ($button-padding * 2) + $line-height;
+  padding: $button-padding $button-padding $button-padding calc(#{$button-padding} * 2 + #{$button-line-height});
   position: relative;
   user-select: none;
   width: $button-width;
@@ -22,7 +22,7 @@
 
   &:before {
     border-color: $button-border-color;
-    border-radius: $button-border-radius;
+    border-radius: 0;
     border-style: $button-border-style;
     border-width: $button-border-width;
     box-sizing: border-box;

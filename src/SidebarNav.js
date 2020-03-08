@@ -9,10 +9,8 @@ const SidebarNav = props => {
   useOnClickOutside(ref, () => setActive(false));
   return (
     <nav aria-label={label} className={`${styles.nav} ${active ? styles.active : styles.inactive}`} ref={ref}>
-      <button aria-label="Menu" className={styles.bun} onClick={() => setActive(!active)}>
-        <span className={styles.pickle} />
-        <span className={styles.cheese} />
-        <span className={styles.patty} />
+      <button aria-label="Menu" className={styles.button} onClick={() => setActive(!active)}>
+        Menu
       </button>
       <div>{children}</div>
     </nav>

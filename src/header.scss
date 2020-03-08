@@ -3,16 +3,10 @@
 .header {
   border-bottom: $border-width $border-style;
   box-sizing: border-box;
-  line-height: 1;
+  line-height: $line-height;
   padding: $padding;
 }
 
-.brand {
-  font-size: inherit;
-  font-weight: bold;
-  line-height: 1;
-
-  > a {
-    text-decoration: none;
-  }
+.brand > a {
+  text-decoration: none;
 }
