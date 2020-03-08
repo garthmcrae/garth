@@ -1,0 +1,20 @@
+@import 'variables';
+
+.align {
+  line-height: inherit;
+  position: relative;
+
+  > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  > svg:first-child {
+    left: 0;
+  }
+
+  > svg:last-child {
+    right: 0;
+  }
+}

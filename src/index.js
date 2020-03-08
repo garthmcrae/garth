@@ -1,3 +1,4 @@
+export { default as Align } from './Align';
 export { default as Anchor } from './Anchor';
 export { default as Border } from './Border';
 export { default as Button } from './Button';
