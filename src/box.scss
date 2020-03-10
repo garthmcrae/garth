@@ -3,6 +3,7 @@
 .box {
   box-sizing: border-box;
   padding: $padding;
+  transition: padding $duration;
 
   > :first-child {
     margin-top: 0;

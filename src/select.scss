@@ -35,7 +35,7 @@
 }
 
 .options.inactive > label {
-  border-radius: $border-radius;
+  border-radius: $button-border-radius;
   display: none;
 
   &:before {
