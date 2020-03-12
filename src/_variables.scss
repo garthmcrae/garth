@@ -11,14 +11,7 @@ $font-weight: var(--font-weight, 400);
 $line-height: var(--line-height, 20px);
 $margin: var(--margin, 16px);
 $padding: var(--padding, 16px);
-$transition: var(
-  --transition,
-  background-color $duration,
-  box-shadow $duration,
-  color $duration,
-  outline $duration,
-  transform $duration
-);
+$transition: var(--transition, background-color 200ms, box-shadow 200ms, color 200ms, outline 200ms, transform 200ms);
 
 $button-border-color: var(--button-border-color, currentColor);
 $button-border-radius: var(--button-border-radius, 0);
@@ -38,20 +31,39 @@ $button-text-decoration: var(--button-text-decoration, none);
 $button-user-select: var(--button-user-select, none);
 $button-width: var(--button-width, 100%);
 
+$button-background: var(--button-background, white);
+$button-box-shadow: var(--button-box-shadow, none);
+$button-outline: var(--button-outline, 2px solid transparent);
+$button-outline-offset: var(--button-outline-offset, 0);
+$button-transform: var(--button-transform, none);
+
+$button-active-background: var(--button-active-background, white);
+$button-active-box-shadow: var(--button-active-box-shadow, none);
+$button-active-outline: var(--button-active-outline, 2px solid grey);
+$button-active-transform: var(--button-active-transform, none);
+
 $sidebar-width: 240px;
 
+$link-background: var(--link-background, transparent);
+$link-color: var(--link-color, currentColor);
+$link-outline: var(--link-outline, 2px solid transparent);
+
+$link-active-background: var(--link-active-background, transparent);
+$link-active-color: var(--link-active-color, currentColor);
+$link-active-outline: var(--link-active-outline, 2px solid grey);
+
 @mixin link-default {
-  background: $background;
-  color: $color;
-  outline: $border-width $border-style transparent;
+  background: $link-background;
+  color: $link-color;
+  outline: $link-outline;
   transition: $transition;
   user-select: none;
 }
 
 @mixin link-active {
-  background: $background;
-  color: $color;
-  outline: $border-width $border-style grey;
+  background: $link-active-background;
+  color: $link-active-color;
+  outline: $link-active-outline;
 }
 
 @mixin button-shared {
@@ -75,17 +87,17 @@ $sidebar-width: 240px;
 
 @mixin button-default {
   appearance: none;
-  background: var(--button-background, white);
-  box-shadow: var(--button-box-shadow, none);
-  outline: var(--button-outline, 2px solid transparent);
-  outline-offset: var(--button-outline-offset, 0);
-  transform: var(--button-transform, none);
+  background: $button-background;
+  box-shadow: $button-box-shadow;
+  outline: $button-outline;
+  outline-offset: $button-outline-offset;
+  transform: $button-transform;
   transition: $transition;
 }
 
 @mixin button-active {
-  background: var(--button-active-background, white);
-  box-shadow: var(--button-active-box-shadow, none);
-  outline: var(--button-active-outline, 2px solid grey);
-  transform: var(--button-active-transform, none);
+  background: $button-active-background;
+  box-shadow: $button-active-box-shadow;
+  outline: $button-active-outline;
+  transform: $button-active-transform;
 }

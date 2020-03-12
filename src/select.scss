@@ -7,36 +7,90 @@
 }
 
 .options {
+  border-color: $button-border-color;
+  border-radius: $button-border-radius;
+  border-style: $button-border-style;
+  border-width: $button-border-width;
+  box-sizing: $button-box-sizing;
+  color: $button-color;
+  display: $button-display;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
   position: absolute;
-  width: 100%;
-}
-
-.options > input {
-  appearance: none;
-  opacity: 0;
-  position: absolute;
-}
-
-.options > label {
-  @include button-shared;
-  margin-bottom: calc(-1 * #{$border-width});
-  padding: $button-padding calc(#{$button-padding} * 2 + #{$button-line-height} / 0.866) $button-padding $button-padding;
-  position: relative;
-  user-select: none;
+  text-align: $button-text-align;
+  text-decoration: $button-text-decoration;
   width: $button-width;
-  z-index: 1;
 
   @include button-default;
 
-  &:focus,
+  &.active,
+  &.focus,
   &:hover {
     @include button-active;
   }
 }
 
+.options > input {
+  appearance: none;
+  opacity: 0;
+  outline: none;
+  position: absolute;
+}
+
+.options > label {
+  box-sizing: $button-box-sizing;
+  display: $button-display;
+  overflow: hidden;
+  padding: $button-padding calc(#{$button-padding} * 2 + #{$button-line-height} / 0.866) $button-padding $button-padding;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
 .options.inactive > label {
-  border-radius: $button-border-radius;
   display: none;
+}
+
+.options.active > label {
+  box-sizing: $button-box-sizing;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  padding: $button-padding $button-padding $button-padding calc(#{$button-padding} * 2 + #{$button-line-height} / 0.866);
+  text-align: $button-text-align;
+  text-decoration: $button-text-decoration;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.options.inactive > input:checked + label {
+  display: block;
+
+  &:after {
+    border-color: $button-color transparent transparent transparent;
+    border-style: solid;
+    border-width: #{$button-line-height} calc(#{$button-line-height} / 0.866 / 2) 0 calc(#{$button-line-height} / 0.866 /
+          2);
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    height: $button-line-height;
+    position: absolute;
+    right: $button-padding;
+    top: $button-padding;
+    width: $button-line-height;
+    z-index: 1;
+  }
+}
+
+.options.active > input:focus + label {
+  position: relative;
 
   &:before {
     border-color: $button-color transparent transparent transparent;
@@ -47,18 +101,11 @@
     content: '';
     display: block;
     height: $button-line-height;
-    right: $button-padding;
+    left: $button-padding;
     top: $button-padding;
     position: absolute;
+    transform: rotate(-90deg);
     width: $button-line-height;
     z-index: 1;
   }
-}
-
-.options > input:checked + label {
-  display: block;
-}
-
-.options > input:focus + label {
-  @include button-active;
 }

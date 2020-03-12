@@ -36,14 +36,10 @@
   }
 }
 
-.input {
-  &:checked + .label {
-    &:before {
-      background: $button-color;
-    }
-  }
+.input:checked + .label:before {
+  background: $button-color;
+}
 
-  &:focus + .label {
-    @include button-active;
-  }
+.input:focus + .label {
+  @include button-active;
 }

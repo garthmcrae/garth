@@ -5,7 +5,7 @@ const Footer = props => {
   const { children } = props;
   return (
     <footer className={styles.footer}>
-      <span className={styles.copy}>{children}</span>
+      <span>{children}</span>
     </footer>
   );
 };

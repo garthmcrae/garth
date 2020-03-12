@@ -2,13 +2,14 @@
 
 .nav {
   background: $background;
-  border-right: $border-width $border-style;
+  border-right-style: $border-style;
+  border-right-width: $border-width;
   box-sizing: border-box;
   flex: 0 1 $sidebar-width;
   height: 100vh;
   position: fixed;
   top: 0;
-  transition: left 0.3s ease-in-out;
+  transition: left $duration;
   left: 0;
   width: $sidebar-width;
   z-index: 2;
