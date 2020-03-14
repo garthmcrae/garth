@@ -3,10 +3,12 @@
 .header {
   border-bottom: $border-width $border-style;
   box-sizing: border-box;
+  display: flex;
   line-height: $line-height;
-  padding: $padding;
+  justify-content: space-between;
+  padding: 0;
 }
 
-.brand > a {
+.header > a {
   text-decoration: none;
 }

@@ -5,7 +5,7 @@ const Header = props => {
   const { children, label } = props;
   return (
     <header className={styles.header} role="banner" aria-label={label}>
-      <span className={styles.brand}>{children}</span>
+      {children}
     </header>
   );
 };

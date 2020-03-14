@@ -2,43 +2,46 @@
 
 .nav {
   background: $background;
-  border-right-style: $border-style;
-  border-right-width: $border-width;
+  border-left-style: $border-style;
+  border-left-width: $border-width;
   box-sizing: border-box;
   flex: 0 1 $sidebar-width;
   height: 100vh;
   position: fixed;
   top: 0;
-  transition: left $duration;
-  left: 0;
+  transition: right $duration;
+  right: 0;
   width: $sidebar-width;
   z-index: 2;
 
   @media (min-width: 768px) {
+    border-left-style: none;
+    flex: initial;
     height: initial;
     overflow-y: auto;
     position: relative;
+    width: initial;
   }
 }
 
 .active {
-  left: 0;
+  right: 0;
 }
 
 .inactive {
-  left: -$sidebar-width;
+  right: -$sidebar-width;
 
   @media (min-width: 768px) {
-    left: 0;
+    right: 0;
   }
 }
 
 .button {
   @include button-shared;
-  bottom: $margin;
-  left: calc(#{$sidebar-width} + #{$margin});
   padding: $button-padding;
   position: absolute;
+  right: calc(#{$sidebar-width} + #{$margin});
+  top: $margin;
   user-select: none;
   width: auto;
 

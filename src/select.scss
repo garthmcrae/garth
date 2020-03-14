@@ -60,7 +60,8 @@
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   line-height: $button-line-height;
-  padding: $button-padding $button-padding $button-padding calc(#{$button-padding} * 2 + #{$button-line-height} / 0.866);
+  padding: $button-padding $button-padding $button-padding
+    calc(#{$button-padding} * 2 + calc(#{$button-line-height} * 0.866) / 0.866);
   text-align: $button-text-align;
   text-decoration: $button-text-decoration;
   text-overflow: ellipsis;
@@ -89,14 +90,15 @@
   }
 }
 
-.options.active > input:focus + label {
+.options.active > input:focus + label,
+.options.active > input:checked + label {
   position: relative;
 
   &:before {
-    border-color: $button-color transparent transparent transparent;
+    border-color: transparent transparent transparent $button-color;
     border-style: solid;
-    border-width: #{$button-line-height} calc(#{$button-line-height} / 0.866 / 2) 0 calc(#{$button-line-height} / 0.866 /
-          2);
+    border-width: calc(#{$button-line-height} / 2) 0 calc(#{$button-line-height} / 2)
+      calc(#{$button-line-height} * 0.866);
     box-sizing: border-box;
     content: '';
     display: block;
@@ -104,7 +106,6 @@
     left: $button-padding;
     top: $button-padding;
     position: absolute;
-    transform: rotate(-90deg);
     width: $button-line-height;
     z-index: 1;
   }
