@@ -35,7 +35,7 @@
 
 .button {
   @include button-shared;
-  bottom: $margin;
+  bottom: calc(#{$margin} * 3);
   left: calc(#{$sidebar-width} + #{$margin});
   padding: $button-padding;
   position: absolute;
