@@ -1,6 +1,7 @@
 @import 'variables';
 
 .header {
+  background: $background;
   border-bottom: $border-width $border-style;
   box-sizing: border-box;
   display: flex;

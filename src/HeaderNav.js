@@ -9,8 +9,8 @@ const HeaderNav = props => {
   useOnClickOutside(ref, () => setActive(false));
   return (
     <nav aria-label={label} className={`${styles.nav} ${active ? styles.active : styles.inactive}`} ref={ref}>
-      <button aria-label="Menu" className={styles.button} onClick={() => setActive(!active)}>
-        Menu
+      <button aria-label={label} className={styles.button} onClick={() => setActive(!active)}>
+        {label}
       </button>
       <div>{children}</div>
     </nav>

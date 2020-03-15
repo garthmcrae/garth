@@ -7,39 +7,39 @@
 }
 
 .label {
-  @include button-shared;
-  padding: $button-padding $button-padding $button-padding calc(#{$button-padding} * 2 + #{$button-line-height});
+  @include input-shared;
+  padding: $input-padding $input-padding $input-padding calc(#{$input-padding} * 2 + #{$input-line-height});
   position: relative;
   user-select: none;
-  width: $button-width;
+  width: $input-width;
 
-  @include button-default;
+  @include input-default;
 
   &:focus,
   &:hover {
-    @include button-active;
+    @include input-active;
   }
 
   &:before {
-    border-color: $button-color;
+    border-color: $input-color;
     border-radius: 0;
-    border-style: $button-border-style;
-    border-width: $button-border-width;
+    border-style: $input-border-style;
+    border-width: $input-border-width;
     box-sizing: border-box;
     content: '';
     display: block;
     height: $line-height;
-    left: $button-padding;
-    top: $button-padding;
+    left: $input-padding;
+    top: $input-padding;
     position: absolute;
     width: $line-height;
   }
 }
 
 .input:checked + .label:before {
-  background: $button-color;
+  background: $input-color;
 }
 
 .input:focus + .label {
-  @include button-active;
+  @include input-active;
 }

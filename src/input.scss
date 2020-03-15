@@ -1,15 +1,15 @@
 @import 'variables';
 
 .input {
-  @include button-shared;
-  padding: $button-padding;
-  width: $button-width;
+  @include input-shared;
+  padding: $input-padding;
+  width: $input-width;
 
-  @include button-default;
+  @include input-default;
 
   &:focus,
   &:hover {
-    @include button-active;
+    @include input-active;
   }
 
   &::placeholder {

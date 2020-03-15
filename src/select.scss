@@ -1,34 +1,34 @@
 @import 'variables';
 
 .select {
-  height: calc(#{$border-width} * 2 + #{$button-padding} * 2 + #{$button-line-height});
+  height: calc(#{$border-width} * 2 + #{$input-padding} * 2 + #{$input-line-height});
   position: relative;
   z-index: 1;
 }
 
 .options {
-  border-color: $button-border-color;
-  border-radius: $button-border-radius;
-  border-style: $button-border-style;
-  border-width: $button-border-width;
-  box-sizing: $button-box-sizing;
-  color: $button-color;
-  display: $button-display;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
+  border-color: $input-border-color;
+  border-radius: $input-border-radius;
+  border-style: $input-border-style;
+  border-width: $input-border-width;
+  box-sizing: $input-box-sizing;
+  color: $input-color;
+  display: $input-display;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
   position: absolute;
-  text-align: $button-text-align;
-  text-decoration: $button-text-decoration;
-  width: $button-width;
+  text-align: $input-text-align;
+  text-decoration: $input-text-decoration;
+  width: $input-width;
 
-  @include button-default;
+  @include input-default;
 
   &.active,
   &.focus,
   &:hover {
-    @include button-active;
+    @include input-active;
   }
 }
 
@@ -40,10 +40,10 @@
 }
 
 .options > label {
-  box-sizing: $button-box-sizing;
-  display: $button-display;
+  box-sizing: $input-box-sizing;
+  display: $input-display;
   overflow: hidden;
-  padding: $button-padding calc(#{$button-padding} * 2 + #{$button-line-height} / 0.866) $button-padding $button-padding;
+  padding: $input-padding calc(#{$input-padding} * 2 + #{$input-line-height} / 0.866) $input-padding $input-padding;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
@@ -55,15 +55,15 @@
 }
 
 .options.active > label {
-  box-sizing: $button-box-sizing;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
-  padding: $button-padding $button-padding $button-padding
-    calc(#{$button-padding} * 2 + calc(#{$button-line-height} * 0.866) / 0.866);
-  text-align: $button-text-align;
-  text-decoration: $button-text-decoration;
+  box-sizing: $input-box-sizing;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  padding: $input-padding $input-padding $input-padding
+    calc(#{$input-padding} * 2 + calc(#{$input-line-height} * 0.866) / 0.866);
+  text-align: $input-text-align;
+  text-decoration: $input-text-decoration;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -74,18 +74,17 @@
   display: block;
 
   &:after {
-    border-color: $button-color transparent transparent transparent;
+    border-color: $input-color transparent transparent transparent;
     border-style: solid;
-    border-width: #{$button-line-height} calc(#{$button-line-height} / 0.866 / 2) 0 calc(#{$button-line-height} / 0.866 /
-          2);
+    border-width: #{$input-line-height} calc(#{$input-line-height} / 0.866 / 2) 0 calc(#{$input-line-height} / 0.866 / 2);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $button-line-height;
+    height: $input-line-height;
     position: absolute;
-    right: $button-padding;
-    top: $button-padding;
-    width: $button-line-height;
+    right: $input-padding;
+    top: $input-padding;
+    width: $input-line-height;
     z-index: 1;
   }
 }
@@ -95,18 +94,17 @@
   position: relative;
 
   &:before {
-    border-color: transparent transparent transparent $button-color;
+    border-color: transparent transparent transparent $input-color;
     border-style: solid;
-    border-width: calc(#{$button-line-height} / 2) 0 calc(#{$button-line-height} / 2)
-      calc(#{$button-line-height} * 0.866);
+    border-width: calc(#{$input-line-height} / 2) 0 calc(#{$input-line-height} / 2) calc(#{$input-line-height} * 0.866);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $button-line-height;
-    left: $button-padding;
-    top: $button-padding;
+    height: $input-line-height;
+    left: $input-padding;
+    top: $input-padding;
     position: absolute;
-    width: $button-line-height;
+    width: $input-line-height;
     z-index: 1;
   }
 }

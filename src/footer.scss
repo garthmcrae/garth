@@ -1,6 +1,7 @@
 @import 'variables';
 
 .footer {
+  background: $background;
   border-top: $border-width $border-style;
   box-sizing: border-box;
   line-height: $line-height;

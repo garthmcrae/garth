@@ -39,10 +39,38 @@ $button-transform: var(--button-transform, none);
 
 $button-active-background: var(--button-active-background, white);
 $button-active-box-shadow: var(--button-active-box-shadow, none);
+$button-active-color: var(--button-active-color, currentColor);
 $button-active-outline: var(--button-active-outline, 2px solid grey);
 $button-active-transform: var(--button-active-transform, none);
 
-$sidebar-width: 240px;
+$input-border-color: var(--input-border-color, currentColor);
+$input-border-radius: var(--input-border-radius, 0);
+$input-border-style: var(--input-border-style, solid);
+$input-border-width: var(--input-border-width, 2px);
+$input-box-sizing: var(--input-border-sizing, border-box);
+$input-color: var(--input-color, currentColor);
+$input-cursor: var(--input-cursor, default);
+$input-display: var(--input-display, block);
+$input-font-family: var(--input-font-family, inherit);
+$input-font-size: var(--input-font-size, inherit);
+$input-font-weight: var(--input-font-weight, 600);
+$input-line-height: var(--input-line-height, 20px);
+$input-padding: var(--input-padding, 16px);
+$input-text-align: var(--input-text-align, left);
+$input-text-decoration: var(--input-text-decoration, none);
+$input-user-select: var(--input-user-select, none);
+$input-width: var(--input-width, 100%);
+
+$input-background: var(--input-background, white);
+$input-box-shadow: var(--input-box-shadow, none);
+$input-outline: var(--input-outline, 2px solid transparent);
+$input-outline-offset: var(--input-outline-offset, 0);
+$input-transform: var(--input-transform, none);
+
+$input-active-background: var(--input-active-background, white);
+$input-active-box-shadow: var(--input-active-box-shadow, none);
+$input-active-outline: var(--input-active-outline, 2px solid grey);
+$input-active-transform: var(--input-active-transform, none);
 
 $link-background: var(--link-background, transparent);
 $link-color: var(--link-color, currentColor);
@@ -52,19 +80,7 @@ $link-active-background: var(--link-active-background, transparent);
 $link-active-color: var(--link-active-color, currentColor);
 $link-active-outline: var(--link-active-outline, 2px solid grey);
 
-@mixin link-default {
-  background: $link-background;
-  color: $link-color;
-  outline: $link-outline;
-  transition: $transition;
-  user-select: none;
-}
-
-@mixin link-active {
-  background: $link-active-background;
-  color: $link-active-color;
-  outline: $link-active-outline;
-}
+$sidebar-width: var(--sidebar-width, 240px);
 
 @mixin button-shared {
   border-color: $button-border-color;
@@ -98,6 +114,57 @@ $link-active-outline: var(--link-active-outline, 2px solid grey);
 @mixin button-active {
   background: $button-active-background;
   box-shadow: $button-active-box-shadow;
+  color: $button-active-color;
   outline: $button-active-outline;
   transform: $button-active-transform;
+}
+
+@mixin input-shared {
+  border-color: $input-border-color;
+  border-radius: $input-border-radius;
+  border-style: $input-border-style;
+  border-width: $input-border-width;
+  box-sizing: $input-box-sizing;
+  color: $input-color;
+  display: $input-display;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  text-align: $input-text-align;
+  text-decoration: $input-text-decoration;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin input-default {
+  appearance: none;
+  background: $input-background;
+  box-shadow: $input-box-shadow;
+  outline: $input-outline;
+  outline-offset: $input-outline-offset;
+  transform: $input-transform;
+  transition: $transition;
+}
+
+@mixin input-active {
+  background: $input-active-background;
+  box-shadow: $input-active-box-shadow;
+  outline: $input-active-outline;
+  transform: $input-active-transform;
+}
+
+@mixin link-default {
+  background: $link-background;
+  color: $link-color;
+  outline: $link-outline;
+  transition: $transition;
+  user-select: none;
+}
+
+@mixin link-active {
+  background: $link-active-background;
+  color: $link-active-color;
+  outline: $link-active-outline;
 }

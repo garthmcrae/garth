@@ -26,7 +26,7 @@
 }
 
 .inactive {
-  left: -$sidebar-width;
+  left: calc(#{$sidebar-width} * -1);
 
   @media (min-width: 768px) {
     left: 0;
