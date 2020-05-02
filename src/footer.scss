@@ -2,7 +2,7 @@
 
 .footer {
   background: $background;
-  border-top: $border-width $border-style;
+  border-top: $border-color $border-style $border-width;
   box-sizing: border-box;
   line-height: $line-height;
   padding: $padding;

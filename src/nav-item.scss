@@ -1,0 +1,15 @@
+@import 'variables';
+
+.nav-item {
+  @include nav-item-shared;
+  padding: $nav-item-padding;
+  user-select: none;
+  width: $nav-item-width;
+
+  @include nav-item-default;
+
+  &:focus,
+  &:hover {
+    @include nav-item-active;
+  }
+}

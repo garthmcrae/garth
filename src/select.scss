@@ -1,7 +1,7 @@
 @import 'variables';
 
 .select {
-  height: calc(#{$border-width} * 2 + #{$input-padding} * 2 + #{$input-line-height});
+  height: calc(#{$input-border-width} * 2 + #{$input-padding} * 2 + #{$input-line-height});
   position: relative;
   z-index: 1;
 }

@@ -11,12 +11,28 @@ $font-weight: var(--font-weight, 400);
 $line-height: var(--line-height, 20px);
 $margin: var(--margin, 16px);
 $padding: var(--padding, 16px);
-$transition: var(--transition, background-color 200ms, box-shadow 200ms, color 200ms, outline 200ms, transform 200ms);
+$transition: var(
+  --transition,
+  background-color 200ms,
+  border 200ms,
+  box-shadow 200ms,
+  color 200ms,
+  outline 200ms,
+  transform 200ms
+);
 
+$brand-font-size: var(--brand-font-size, 24px);
+$brand-font-weight: var(--brand-font-weight, 400);
+$brand-line-height: var(--brand-line-height, 32px);
+$brand-margin: var(--brand-margin, 16px);
+$brand-text-decoration: var(--brand-text-decoration, none);
+
+$button-background: var(--button-background, white);
 $button-border-color: var(--button-border-color, currentColor);
 $button-border-radius: var(--button-border-radius, 0);
 $button-border-style: var(--button-border-style, solid);
 $button-border-width: var(--button-border-width, 2px);
+$button-box-shadow: var(--button-box-shadow, none);
 $button-box-sizing: var(--button-border-sizing, border-box);
 $button-color: var(--button-color, currentColor);
 $button-cursor: var(--button-cursor, default);
@@ -25,17 +41,15 @@ $button-font-family: var(--button-font-family, inherit);
 $button-font-size: var(--button-font-size, inherit);
 $button-font-weight: var(--button-font-weight, 600);
 $button-line-height: var(--button-line-height, 20px);
+$button-outline-offset: var(--button-outline-offset, 0);
+$button-outline: var(--button-outline, 2px solid transparent);
 $button-padding: var(--button-padding, 16px);
 $button-text-align: var(--button-text-align, left);
 $button-text-decoration: var(--button-text-decoration, none);
+$button-text-transform: var(--button-text-transform, none);
+$button-transform: var(--button-transform, none);
 $button-user-select: var(--button-user-select, none);
 $button-width: var(--button-width, 100%);
-
-$button-background: var(--button-background, white);
-$button-box-shadow: var(--button-box-shadow, none);
-$button-outline: var(--button-outline, 2px solid transparent);
-$button-outline-offset: var(--button-outline-offset, 0);
-$button-transform: var(--button-transform, none);
 
 $button-active-background: var(--button-active-background, white);
 $button-active-box-shadow: var(--button-active-box-shadow, none);
@@ -68,17 +82,54 @@ $input-outline-offset: var(--input-outline-offset, 0);
 $input-transform: var(--input-transform, none);
 
 $input-active-background: var(--input-active-background, white);
+$input-active-border-color: var(--input-active-border-color, currentColor);
 $input-active-box-shadow: var(--input-active-box-shadow, none);
 $input-active-outline: var(--input-active-outline, 2px solid grey);
 $input-active-transform: var(--input-active-transform, none);
 
 $link-background: var(--link-background, transparent);
 $link-color: var(--link-color, currentColor);
+$link-font-weight: var(--link-font-weight, 600);
 $link-outline: var(--link-outline, 2px solid transparent);
 
 $link-active-background: var(--link-active-background, transparent);
 $link-active-color: var(--link-active-color, currentColor);
 $link-active-outline: var(--link-active-outline, 2px solid grey);
+
+$nav-item-background: var(--nav-item-background, transparent);
+$nav-item-border-color: var(--nav-item-border-color, currentColor);
+$nav-item-border-radius: var(--nav-item-border-radius, 0);
+$nav-item-border-style: var(--nav-item-border-style, solid);
+$nav-item-border-width: var(--nav-item-border-width, 2px);
+$nav-item-box-shadow: var(--nav-item-box-shadow, none);
+$nav-item-box-sizing: var(--nav-item-border-sizing, border-box);
+$nav-item-color: var(--nav-item-color, currentColor);
+$nav-item-cursor: var(--nav-item-cursor, default);
+$nav-item-display: var(--nav-item-display, block);
+$nav-item-font-family: var(--nav-item-font-family, inherit);
+$nav-item-font-size: var(--nav-item-font-size, inherit);
+$nav-item-font-weight: var(--nav-item-font-weight, 600);
+$nav-item-line-height: var(--nav-item-line-height, 20px);
+$nav-item-outline-offset: var(--nav-item-outline-offset, 0);
+$nav-item-outline: var(--nav-item-outline, 2px solid transparent);
+$nav-item-padding: var(--nav-item-padding, 16px);
+$nav-item-text-align: var(--nav-item-text-align, left);
+$nav-item-text-decoration: var(--nav-item-text-decoration, none);
+$nav-item-text-transform: var(--nav-item-text-transform, none);
+$nav-item-transform: var(--nav-item-transform, none);
+$nav-item-user-select: var(--nav-item-user-select, none);
+$nav-item-width: var(--nav-item-width, 100%);
+
+$nav-item-active-background: var(--nav-item-active-background, transparent);
+$nav-item-active-box-shadow: var(--nav-item-active-box-shadow, none);
+$nav-item-active-color: var(--nav-item-active-color, currentColor);
+$nav-item-active-outline: var(--nav-item-active-outline, 2px solid grey);
+$nav-item-active-transform: var(--nav-item-active-transform, none);
+
+$title-font-size: var(--font-size, 32px);
+$title-font-weight: var(--font-weight, 400);
+$title-line-height: var(--line-height, 40px);
+$title-margin: var(--margin, 16px 0);
 
 $sidebar-width: var(--sidebar-width, 240px);
 
@@ -95,6 +146,7 @@ $sidebar-width: var(--sidebar-width, 240px);
   font-weight: $button-font-weight;
   line-height: $button-line-height;
   text-align: $button-text-align;
+  text-transform: $button-text-transform;
   text-decoration: $button-text-decoration;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -150,6 +202,7 @@ $sidebar-width: var(--sidebar-width, 240px);
 
 @mixin input-active {
   background: $input-active-background;
+  border-color: $input-active-border-color;
   box-shadow: $input-active-box-shadow;
   outline: $input-active-outline;
   transform: $input-active-transform;
@@ -158,6 +211,7 @@ $sidebar-width: var(--sidebar-width, 240px);
 @mixin link-default {
   background: $link-background;
   color: $link-color;
+  font-weight: $link-font-weight;
   outline: $link-outline;
   transition: $transition;
   user-select: none;
@@ -167,4 +221,42 @@ $sidebar-width: var(--sidebar-width, 240px);
   background: $link-active-background;
   color: $link-active-color;
   outline: $link-active-outline;
+}
+
+@mixin nav-item-shared {
+  border-color: $nav-item-border-color;
+  border-radius: $nav-item-border-radius;
+  border-style: $nav-item-border-style;
+  border-width: $nav-item-border-width;
+  box-sizing: $nav-item-box-sizing;
+  color: $nav-item-color;
+  display: $nav-item-display;
+  font-family: $nav-item-font-family;
+  font-size: $nav-item-font-size;
+  font-weight: $nav-item-font-weight;
+  line-height: $nav-item-line-height;
+  text-align: $nav-item-text-align;
+  text-transform: $nav-item-text-transform;
+  text-decoration: $nav-item-text-decoration;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin nav-item-default {
+  appearance: none;
+  background: $nav-item-background;
+  box-shadow: $nav-item-box-shadow;
+  outline: $nav-item-outline;
+  outline-offset: $nav-item-outline-offset;
+  transform: $nav-item-transform;
+  transition: $transition;
+}
+
+@mixin nav-item-active {
+  background: $nav-item-active-background;
+  box-shadow: $nav-item-active-box-shadow;
+  color: $nav-item-active-color;
+  outline: $nav-item-active-outline;
+  transform: $nav-item-active-transform;
 }

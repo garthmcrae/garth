@@ -1,24 +1,9 @@
 @import 'variables';
 
 .brand {
-  border-color: transparent;
-  border-radius: $button-border-radius;
-  border-style: $button-border-style;
-  border-width: $button-border-width;
-  box-sizing: $button-box-sizing;
-  color: $button-color;
-  display: $button-display;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
-  margin: $margin;
-  padding: $button-padding;
-  text-align: $button-text-align;
-  text-decoration: $button-text-decoration;
-
-  &:focus,
-  &:hover {
-    @include link-active;
-  }
+  font-size: $brand-font-size;
+  font-weight: $brand-font-weight;
+  line-height: $brand-line-height;
+  margin: $brand-margin;
+  text-decoration: $brand-text-decoration;
 }
