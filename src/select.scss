@@ -1,34 +1,73 @@
 @import 'variables';
 
+$select-background: var(--select-background, white);
+$select-border-color: var(--select-border-color, currentColor);
+$select-border-radius: var(--select-border-radius, 0);
+$select-border-style: var(--select-border-style, solid);
+$select-border-width: var(--select-border-width, 2px);
+$select-box-shadow: var(--select-box-shadow, none);
+$select-box-sizing: var(--select-border-sizing, border-box);
+$select-color: var(--select-color, currentColor);
+$select-cursor: var(--select-cursor, default);
+$select-display: var(--select-display, block);
+$select-font-family: var(--select-font-family, inherit);
+$select-font-size: var(--select-font-size, inherit);
+$select-font-weight: var(--select-font-weight, 600);
+$select-line-height: var(--select-line-height, 20px);
+$select-outline-offset: var(--select-outline-offset, 0);
+$select-outline: var(--select-outline, 2px solid transparent);
+$select-padding: var(--select-padding, 16px);
+$select-text-align: var(--select-text-align, left);
+$select-text-decoration: var(--select-text-decoration, none);
+$select-transform: var(--select-transform, none);
+$select-user-select: var(--select-user-select, none);
+$select-width: var(--select-width, 100%);
+
+$select-active-background: var(--select-active-background, white);
+$select-active-border-color: var(--select-active-border-color, currentColor);
+$select-active-box-shadow: var(--select-active-box-shadow, none);
+$select-active-outline: var(--select-active-outline, 2px solid black);
+$select-active-transform: var(--select-active-transform, none);
+
 .select {
-  height: calc(#{$input-border-width} * 2 + #{$input-padding} * 2 + #{$input-line-height});
+  height: calc(#{$select-border-width} * 2 + #{$select-padding} * 2 + #{$select-line-height});
   position: relative;
   z-index: 1;
 }
 
 .options {
-  border-color: $input-border-color;
-  border-radius: $input-border-radius;
-  border-style: $input-border-style;
-  border-width: $input-border-width;
-  box-sizing: $input-box-sizing;
-  color: $input-color;
-  display: $input-display;
-  font-family: $input-font-family;
-  font-size: $input-font-size;
-  font-weight: $input-font-weight;
-  line-height: $input-line-height;
+  appearance: none;
+  background: $select-background;
+  border-color: $select-border-color;
+  border-radius: $select-border-radius;
+  border-style: $select-border-style;
+  border-width: $select-border-width;
+  box-shadow: $select-box-shadow;
+  box-sizing: $select-box-sizing;
+  color: $select-color;
+  display: $select-display;
+  font-family: $select-font-family;
+  font-size: $select-font-size;
+  font-weight: $select-font-weight;
+  line-height: $select-line-height;
+  outline-offset: $select-outline-offset;
+  outline: $select-outline;
   position: absolute;
-  text-align: $input-text-align;
-  text-decoration: $input-text-decoration;
-  width: $input-width;
-
-  @include input-default;
+  text-align: $select-text-align;
+  text-decoration: $select-text-decoration;
+  transform: $select-transform;
+  transition: $transition;
+  user-select: $select-user-select;
+  width: $select-width;
 
   &.active,
   &.focus,
   &:hover {
-    @include input-active;
+    background: $select-active-background;
+    border-color: $select-active-border-color;
+    box-shadow: $select-active-box-shadow;
+    outline: $select-active-outline;
+    transform: $select-active-transform;
   }
 }
 
@@ -40,10 +79,10 @@
 }
 
 .options > label {
-  box-sizing: $input-box-sizing;
-  display: $input-display;
+  box-sizing: $select-box-sizing;
+  display: $select-display;
   overflow: hidden;
-  padding: $input-padding calc(#{$input-padding} * 2 + #{$input-line-height} / 0.866) $input-padding $input-padding;
+  padding: $select-padding calc(#{$select-padding} * 2 + #{$select-line-height} / 0.866) $select-padding $select-padding;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
@@ -55,15 +94,15 @@
 }
 
 .options.active > label {
-  box-sizing: $input-box-sizing;
-  font-family: $input-font-family;
-  font-size: $input-font-size;
-  font-weight: $input-font-weight;
-  line-height: $input-line-height;
-  padding: $input-padding $input-padding $input-padding
-    calc(#{$input-padding} * 2 + calc(#{$input-line-height} * 0.866) / 0.866);
-  text-align: $input-text-align;
-  text-decoration: $input-text-decoration;
+  box-sizing: $select-box-sizing;
+  font-family: $select-font-family;
+  font-size: $select-font-size;
+  font-weight: $select-font-weight;
+  line-height: $select-line-height;
+  padding: $select-padding $select-padding $select-padding
+    calc(#{$select-padding} * 2 + calc(#{$select-line-height} * 0.866) / 0.866);
+  text-align: $select-text-align;
+  text-decoration: $select-text-decoration;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -73,18 +112,19 @@
 .options.inactive > input:checked + label {
   display: block;
 
-  &:after {
-    border-color: $input-color transparent transparent transparent;
+  &::after {
+    border-color: $select-color transparent transparent transparent;
     border-style: solid;
-    border-width: #{$input-line-height} calc(#{$input-line-height} / 0.866 / 2) 0 calc(#{$input-line-height} / 0.866 / 2);
+    border-width: #{$select-line-height} calc(#{$select-line-height} / 0.866 / 2) 0 calc(#{$select-line-height} / 0.866 /
+          2);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $input-line-height;
+    height: $select-line-height;
     position: absolute;
-    right: $input-padding;
-    top: $input-padding;
-    width: $input-line-height;
+    right: $select-padding;
+    top: $select-padding;
+    width: $select-line-height;
     z-index: 1;
   }
 }
@@ -93,18 +133,19 @@
 .options.active > input:checked + label {
   position: relative;
 
-  &:before {
-    border-color: transparent transparent transparent $input-color;
+  &::before {
+    border-color: transparent transparent transparent $select-color;
     border-style: solid;
-    border-width: calc(#{$input-line-height} / 2) 0 calc(#{$input-line-height} / 2) calc(#{$input-line-height} * 0.866);
+    border-width: calc(#{$select-line-height} / 2) 0 calc(#{$select-line-height} / 2)
+      calc(#{$select-line-height} * 0.866);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $input-line-height;
-    left: $input-padding;
-    top: $input-padding;
+    height: $select-line-height;
+    left: $select-padding;
+    top: $select-padding;
     position: absolute;
-    width: $input-line-height;
+    width: $select-line-height;
     z-index: 1;
   }
 }

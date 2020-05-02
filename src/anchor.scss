@@ -1,10 +1,18 @@
 @import 'variables';
 
 .anchor {
-  @include link-default;
+  background: var(--anchor-background, $background);
+  color: var(--anchor-color, black);
+  font-weight: var(--anchor-font-weight, 600);
+  outline: var(--anchor-outline, 2px solid white);
+  text-decoration: underline;
+  transition: var(--transition, background-color $duration, color $duration, outline $duration);
+  user-select: none;
 
   &:focus,
   &:hover {
-    @include link-active;
+    background: var(--anchor-active-background, $background);
+    color: var(--anchor-active-color, black);
+    outline: var(--anchor-active-outline, 2px solid black);
   }
 }

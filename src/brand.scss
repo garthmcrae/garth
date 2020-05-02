@@ -1,9 +1,9 @@
 @import 'variables';
 
 .brand {
-  font-size: $brand-font-size;
-  font-weight: $brand-font-weight;
-  line-height: $brand-line-height;
-  margin: $brand-margin;
-  text-decoration: $brand-text-decoration;
+  font-size: var(--brand-font-size, 24px);
+  font-weight: var(--brand-font-weight, 400);
+  line-height: var(--brand-line-height, 32px);
+  margin: var(--brand-margin, 16px);
+  text-decoration: var(--brand-text-decoration, none);
 }

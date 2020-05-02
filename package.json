@@ -49,7 +49,8 @@
     "rollup-plugin-postcss": "2.0.3",
     "rollup-plugin-url": "2.2.1",
     "stylelint": "^10.0.1",
-    "stylelint-config-recommended-scss": "^3.3.0"
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "peerDependencies": {
     "react": "^16.12.0"
@@ -58,7 +59,7 @@
     "build": "rollup -c",
     "deploy": "npm run build && npm version patch && npm publish",
     "postversion": "git push && git push --tags && npm publish",
-    "stylelint": "stylelint **/*.scss",
+    "stylelint": "stylelint --fix **/*.scss",
     "prettier": "prettier --write src/**/*.{js,scss}",
     "start": "rollup -c -w",
     "version": "npm run build"

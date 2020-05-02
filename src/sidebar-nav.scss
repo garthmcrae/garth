@@ -34,21 +34,10 @@
   }
 }
 
-.button {
-  @include button-shared;
+.control {
   bottom: calc(#{$margin} + 80px);
   left: calc(#{$sidebar-width} + #{$margin});
-  padding: $button-padding;
   position: absolute;
-  user-select: none;
-  width: auto;
-
-  @include button-default;
-
-  &:focus,
-  &:hover {
-    @include button-active;
-  }
 
   @media (min-width: 768px) {
     display: none;

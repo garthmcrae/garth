@@ -1,15 +1,40 @@
 @import 'variables';
 
 .button {
-  @include button-shared;
-  padding: $button-padding;
-  user-select: none;
-  width: $button-width;
-
-  @include button-default;
+  appearance: none;
+  background: var(--button-background, white);
+  border-color: var(--button-border-color, currentColor);
+  border-radius: var(--button-border-radius, 0);
+  border-style: var(--button-border-style, solid);
+  border-width: var(--button-border-width, 2px);
+  box-shadow: var(--button-box-shadow, none);
+  box-sizing: var(--button-border-sizing, border-box);
+  color: var(--button-color, currentColor);
+  cursor: var(--button-cursor, default);
+  display: var(--button-display, block);
+  font-family: var(--button-font-family, inherit);
+  font-size: var(--button-font-size, inherit);
+  font-weight: var(--button-font-weight, 600);
+  line-height: var(--button-line-height, 20px);
+  outline-offset: var(--button-outline-offset, 0);
+  outline: var(--button-outline, 2px solid transparent);
+  padding: var(--button-padding, var(--padding));
+  text-align: var(--button-text-align, left);
+  text-decoration: var(--button-text-decoration, none);
+  text-overflow: ellipsis;
+  text-transform: var(--button-text-transform, none);
+  transform: var(--button-transform, none);
+  transition: $transition;
+  user-select: var(--button-user-select, none);
+  white-space: nowrap;
+  width: var(--button-width, 100%);
 
   &:focus,
   &:hover {
-    @include button-active;
+    background: var(--button-active-background, white);
+    box-shadow: var(--button-active-box-shadow, none);
+    color: var(--button-active-color, currentColor);
+    outline: var(--button-active-outline, 2px solid black);
+    transform: var(--button-active-transform, none);
   }
 }

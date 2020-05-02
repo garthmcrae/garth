@@ -1,5 +1,13 @@
 @import 'variables';
 
+@mixin checkable-active {
+  background: var(--checkable-active-background, white);
+  border-color: var(--checkable-active-border-color, currentColor);
+  box-shadow: var(--checkable-active-box-shadow, none);
+  outline: var(--checkable-active-outline, 2px solid currentColor);
+  transform: var(--checkable-active-transform, none);
+}
+
 .input {
   opacity: 0;
   position: absolute;
@@ -7,39 +15,57 @@
 }
 
 .label {
-  @include input-shared;
-  padding: $input-padding $input-padding $input-padding calc(#{$input-padding} * 2 + #{$input-line-height});
+  background: var(--checkable-background, white);
+  border-color: var(--checkable-border-color, currentColor);
+  border-radius: var(--checkable-border-radius, 0);
+  border-style: var(--checkable-border-style, solid);
+  border-width: var(--checkable-border-width, 2px);
+  box-shadow: var(--checkable-box-shadow, none);
+  box-sizing: var(--checkable-border-sizing, border-box);
+  color: var(--checkable-color, currentColor);
+  cursor: var(--checkable-cursor, default);
+  display: var(--checkable-display, block);
+  font-family: var(--checkable-font-family, inherit);
+  font-size: var(--checkable-font-size, inherit);
+  font-weight: var(--checkable-font-weight, 600);
+  line-height: var(--checkable-line-height, 20px);
+  outline-offset: var(--checkable-outline-offset, 0);
+  outline: var(--checkable-outline, 2px solid transparent);
+  padding: var(--checkable-padding, 16px) var(--checkable-padding, 16px) var(--checkable-padding, 16px)
+    calc(var(--checkable-padding, 16px) * 2 + var(--checkable-line-height, 20px));
   position: relative;
+  text-align: var(--checkable-text-align, left);
+  text-decoration: var(--checkable-text-decoration, none);
+  transform: var(--checkable-transform, none);
   user-select: none;
-  width: $input-width;
-
-  @include input-default;
+  user-select: var(--checkable-user-select, none);
+  width: var(--checkable-width, 100%);
 
   &:focus,
   &:hover {
-    @include input-active;
+    @include checkable-active;
   }
 
-  &:before {
-    border-color: $input-color;
-    border-radius: 0;
-    border-style: $input-border-style;
-    border-width: $input-border-width;
+  &::before {
+    border-color: var(--checkable-border-color, currentColor);
+    border-radius: var(--checkable-border-radius, 0);
+    border-style: var(--checkable-border-style, solid);
+    border-width: var(--checkable-border-width, 2px);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $line-height;
-    left: $input-padding;
-    top: $input-padding;
+    height: var(--checkable-line-height, 20px);
+    left: var(--checkable-padding, 16px);
+    top: var(--checkable-padding, 16px);
     position: absolute;
-    width: $line-height;
+    width: var(--checkable-line-height, 20px);
   }
 }
 
-.input:checked + .label:before {
-  background: $input-color;
+.input:checked + .label::before {
+  background: var(--checkable-color, black);
 }
 
 .input:focus + .label {
-  @include input-active;
+  @include checkable-active;
 }
