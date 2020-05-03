@@ -3,6 +3,6 @@
 .layout {
   @media (min-width: 768px) {
     display: flex;
-    min-height: calc(100vh - (#{$border-width} * 6 + #{$padding} * 6 + #{$line-height} * 2));
+    min-height: calc(100vh - (#{$border-width} * 4 + #{$padding} * 6 + #{$line-height} * 2));
   }
 }
