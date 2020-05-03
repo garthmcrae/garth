@@ -4,6 +4,13 @@
   font-size: var(--brand-font-size, #{$font-size});
   font-weight: var(--brand-font-weight, #{$font-weight});
   line-height: var(--brand-line-height, #{$line-height});
-  margin: var(--brand-margin, calc(#{$border-width} + #{$margin} + #{$padding}));
+  margin: var(--brand-margin, calc(#{$border-width} + #{$margin} + #{$padding}) #{$padding});
   text-decoration: var(--brand-text-decoration, none);
+
+  &:focus,
+  &:hover {
+    background: var(--anchor-active-background, #{$color});
+    color: var(--anchor-active-color, #{$background});
+    outline: var(--anchor-active-outline, #{$border-width} solid #{$color});
+  }
 }
