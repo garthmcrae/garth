@@ -57,11 +57,11 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "deploy": "npm run build && npm version patch && npm publish",
     "postversion": "git push && git push --tags && npm publish",
-    "stylelint": "stylelint --fix **/*.scss",
     "prettier": "prettier --write src/**/*.{js,scss}",
+    "preversion": "npm prettier && npm stylelint",
     "start": "rollup -c -w",
+    "stylelint": "stylelint --fix **/*.scss",
     "version": "npm run build"
   },
   "files": [
