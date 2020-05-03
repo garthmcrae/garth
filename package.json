@@ -59,7 +59,7 @@
     "build": "rollup -c",
     "postversion": "git push && git push --tags && npm publish",
     "prettier": "prettier --write src/**/*.{js,scss}",
-    "preversion": "npm prettier && npm stylelint",
+    "preversion": "npm run prettier && npm run stylelint",
     "start": "rollup -c -w",
     "stylelint": "stylelint --fix **/*.scss",
     "version": "npm run build"
