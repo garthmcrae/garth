@@ -2,18 +2,5 @@
   "ignoreFiles": [
     "**/*.js",
   ],
-  "extends": "stylelint-config-standard",
-  "rules": {
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": [
-        "each",
-        "for",
-        "function",
-        "if",
-        "include",
-        "mixin"
-      ]
-    }],
-    "unit-whitelist": ["%", "ms", "px", "vh", "vw"]
-  }
+  "extends": "stylelint-config-standard-scss"
 }

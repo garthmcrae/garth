@@ -2,11 +2,11 @@
 
 .nav-item {
   appearance: none;
-  background: var(--nav-item-background, transparent);
+  background: var(--nav-item-background, #{$background});
   border-color: var(--nav-item-border-color, currentColor);
-  border-radius: var(--nav-item-border-radius, 0);
-  border-style: var(--nav-item-border-style, solid);
-  border-width: var(--nav-item-border-width, 2px);
+  border-radius: var(--nav-item-border-radius, #{$border-radius});
+  border-style: var(--nav-item-border-style, #{$border-style});
+  border-width: var(--nav-item-border-width, #{$border-width});
   box-shadow: var(--nav-item-box-shadow, none);
   box-sizing: var(--nav-item-border-sizing, border-box);
   color: var(--nav-item-color, currentColor);
@@ -14,14 +14,14 @@
   display: var(--nav-item-display, block);
   font-family: var(--nav-item-font-family, inherit);
   font-size: var(--nav-item-font-size, inherit);
-  font-weight: var(--nav-item-font-weight, 600);
-  line-height: var(--nav-item-line-height, 20px);
+  font-weight: var(--nav-item-font-weight, #{$font-weight});
+  line-height: var(--nav-item-line-height, #{$line-height});
   outline-offset: var(--nav-item-outline-offset, 0);
-  outline: var(--nav-item-outline, 2px solid transparent);
-  overflow: hidden;
-  padding: var(--nav-item-padding, 16px);
+  outline: var(--nav-item-outline, #{$border-width} solid transparent);
+  padding: var(--nav-item-padding, #{$padding});
   text-align: var(--nav-item-text-align, left);
   text-decoration: var(--nav-item-text-decoration, none);
+  text-overflow: ellipsis;
   text-transform: var(--nav-item-text-transform, none);
   transform: var(--nav-item-transform, none);
   transition: $transition;
@@ -31,10 +31,10 @@
 
   &:focus,
   &:hover {
-    background: var(--nav-item-active-background, transparent);
+    background: var(--nav-item-active-background, #{$background});
     box-shadow: var(--nav-item-active-box-shadow, none);
     color: var(--nav-item-active-color, currentColor);
-    outline: var(--nav-item-active-outline, 2px solid black);
+    outline: var(--nav-item-active-outline, #{$border-width} solid #{$color});
     transform: var(--nav-item-active-transform, none);
   }
 }

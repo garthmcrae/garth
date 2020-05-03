@@ -2,11 +2,11 @@
 
 .input {
   appearance: none;
-  background: var(--input-background, white);
+  background: var(--input-background, #{$background});
   border-color: var(--input-border-color, currentColor);
-  border-radius: var(--input-border-radius, 0);
-  border-style: var(--input-border-style, solid);
-  border-width: var(--input-border-width, 2px);
+  border-radius: var(--input-border-radius, #{$border-radius});
+  border-style: var(--input-border-style, #{$border-style});
+  border-width: var(--input-border-width, #{$border-width});
   box-shadow: var(--input-box-shadow, none);
   box-sizing: var(--input-border-sizing, border-box);
   color: var(--input-color, currentColor);
@@ -14,11 +14,11 @@
   display: var(--input-display, block);
   font-family: var(--input-font-family, inherit);
   font-size: var(--input-font-size, inherit);
-  font-weight: var(--input-font-weight, 600);
-  line-height: var(--input-line-height, 20px);
+  font-weight: var(--input-font-weight, #{$font-weight});
+  line-height: var(--input-line-height, #{$line-height});
   outline-offset: var(--input-outline-offset, 0);
-  outline: var(--input-outline, 2px solid transparent);
-  padding: var(--input-padding, 16px);
+  outline: var(--input-outline, #{$border-width} solid transparent);
+  padding: var(--input-padding, #{$padding});
   text-align: var(--input-text-align, left);
   text-decoration: var(--input-text-decoration, none);
   transform: var(--input-transform, none);
@@ -28,10 +28,10 @@
 
   &:focus,
   &:hover {
-    background: var(--input-active-background, white);
+    background: var(--input-active-background, #{$background});
     border-color: var(--input-active-border-color, currentColor);
     box-shadow: var(--input-active-box-shadow, none);
-    outline: var(--input-active-outline, 2px solid black);
+    outline: var(--input-active-outline, #{$border-width} solid #{$color});
     transform: var(--input-active-transform, none);
   }
 

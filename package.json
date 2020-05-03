@@ -48,9 +48,9 @@
     "rollup-plugin-peer-deps-external": "2.2.0",
     "rollup-plugin-postcss": "2.0.3",
     "rollup-plugin-url": "2.2.1",
-    "stylelint": "^10.0.1",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-scss": "^3.17.1"
   },
   "peerDependencies": {
     "react": "^16.12.0"
@@ -84,7 +84,5 @@
     "node": ">=10.0.0",
     "npm": ">=6.4.0"
   },
-  "dependencies": {
-    "stylelint-scss": "^3.14.2"
-  }
+  "dependencies": {}
 }

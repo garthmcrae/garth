@@ -1,10 +1,10 @@
 @import 'variables';
 
 @mixin checkable-active {
-  background: var(--checkable-active-background, white);
-  border-color: var(--checkable-active-border-color, currentColor);
+  background: var(--checkable-active-background, #{$background});
   box-shadow: var(--checkable-active-box-shadow, none);
-  outline: var(--checkable-active-outline, 2px solid currentColor);
+  color: var(--checkable-active-color, currentColor);
+  outline: var(--checkable-active-outline, #{$border-width} solid #{$color});
   transform: var(--checkable-active-transform, none);
 }
 
@@ -15,30 +15,34 @@
 }
 
 .label {
-  background: var(--checkable-background, white);
-  border-color: var(--checkable-border-color, currentColor);
-  border-radius: var(--checkable-border-radius, 0);
-  border-style: var(--checkable-border-style, solid);
-  border-width: var(--checkable-border-width, 2px);
+  background: var(--checkable-background, #{$background});
+  border-color: var(--checkable-border-color, #{$color});
+  border-radius: var(--checkable-border-radius, #{$border-radius});
+  border-style: var(--checkable-border-style, #{$border-style});
+  border-width: var(--checkable-border-width, #{$border-width});
   box-shadow: var(--checkable-box-shadow, none);
   box-sizing: var(--checkable-border-sizing, border-box);
-  color: var(--checkable-color, currentColor);
+  color: var(--checkable-color, #{$color});
   cursor: var(--checkable-cursor, default);
   display: var(--checkable-display, block);
   font-family: var(--checkable-font-family, inherit);
   font-size: var(--checkable-font-size, inherit);
-  font-weight: var(--checkable-font-weight, 600);
-  line-height: var(--checkable-line-height, 20px);
+  font-weight: var(--checkable-font-weight, #{$font-weight});
+  line-height: var(--checkable-line-height, #{$line-height});
   outline-offset: var(--checkable-outline-offset, 0);
-  outline: var(--checkable-outline, 2px solid transparent);
-  padding: var(--checkable-padding, 16px) var(--checkable-padding, 16px) var(--checkable-padding, 16px)
-    calc(var(--checkable-padding, 16px) * 2 + var(--checkable-line-height, 20px));
-  position: relative;
+  outline: var(--checkable-outline, #{$border-width} solid #{$background});
+  padding: var(--checkable-padding, #{$padding}) var(--checkable-padding, #{$padding})
+    var(--checkable-padding, #{$padding})
+    calc(var(--checkable-padding, #{$padding}) * 2 + var(--checkable-line-height, #{$line-height}));
   text-align: var(--checkable-text-align, left);
+  position: relative;
   text-decoration: var(--checkable-text-decoration, none);
+  text-overflow: ellipsis;
+  text-transform: var(--checkable-text-transform, none);
   transform: var(--checkable-transform, none);
-  user-select: none;
+  transition: $transition;
   user-select: var(--checkable-user-select, none);
+  white-space: nowrap;
   width: var(--checkable-width, 100%);
 
   &:focus,
@@ -47,23 +51,23 @@
   }
 
   &::before {
-    border-color: var(--checkable-border-color, currentColor);
-    border-radius: var(--checkable-border-radius, 0);
-    border-style: var(--checkable-border-style, solid);
-    border-width: var(--checkable-border-width, 2px);
+    border-color: var(--checkable-border-color, #{$color});
+    border-radius: var(--checkable-border-radius, #{$border-radius});
+    border-style: var(--checkable-border-style, #{$border-style});
+    border-width: var(--checkable-border-width, #{$border-width});
     box-sizing: border-box;
     content: '';
     display: block;
-    height: var(--checkable-line-height, 20px);
-    left: var(--checkable-padding, 16px);
-    top: var(--checkable-padding, 16px);
+    height: var(--checkable-line-height, #{$line-height});
+    left: var(--checkable-padding, #{$padding});
+    top: var(--checkable-padding, #{$padding});
     position: absolute;
-    width: var(--checkable-line-height, 20px);
+    width: var(--checkable-line-height, #{$line-height});
   }
 }
 
 .input:checked + .label::before {
-  background: var(--checkable-color, black);
+  background: var(--checkable-color, #{$color});
 }
 
 .input:focus + .label {

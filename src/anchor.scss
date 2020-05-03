@@ -1,18 +1,18 @@
 @import 'variables';
 
 .anchor {
-  background: var(--anchor-background, $background);
-  color: var(--anchor-color, black);
-  font-weight: var(--anchor-font-weight, 600);
-  outline: var(--anchor-outline, 2px solid white);
-  text-decoration: underline;
-  transition: var(--transition, background-color $duration, color $duration, outline $duration);
+  background: var(--anchor-background, #{$background});
+  color: var(--anchor-color, var(--color));
+  font-weight: var(--anchor-font-weight, #{$font-weight});
+  outline: var(--anchor-outline, #{$border-width} solid transparent);
+  text-decoration: var(--anchor-text-decoration, underline);
+  transition: var(--transition, background #{$duration}, color #{$duration}, outline #{$duration});
   user-select: none;
 
   &:focus,
   &:hover {
-    background: var(--anchor-active-background, $background);
-    color: var(--anchor-active-color, black);
-    outline: var(--anchor-active-outline, 2px solid black);
+    background: var(--anchor-active-background, #{$color});
+    color: var(--anchor-active-color, #{$background});
+    outline: var(--anchor-active-outline, #{$border-width} solid #{$color});
   }
 }

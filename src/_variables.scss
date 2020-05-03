@@ -1,16 +1,16 @@
 $background: var(--background, white);
-$border-color: var(--border-color, currentColor);
+$border-color: var(--border-color, black);
 $border-radius: var(--border-radius, 0);
 $border-style: var(--border-style, solid);
-$border-width: var(--border-width, 1px);
+$border-width: var(--border-width, 2px);
 $color: var(--color, black);
 $duration: var(--duration, 200ms);
 $font-family: var(--font-family, 16px);
 $font-size: var(--font-size, 16px);
-$font-weight: var(--font-weight, 400);
+$font-weight: var(--font-weight, 600);
 $line-height: var(--line-height, 20px);
-$margin: var(--margin, 16px);
-$padding: var(--padding, 16px);
+$margin: var(--margin, 8px);
+$padding: var(--padding, 8px);
 $transition: var(
   --transition,
   background-color 200ms,
