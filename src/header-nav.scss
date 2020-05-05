@@ -39,8 +39,8 @@
 
 .control {
   position: absolute;
-  right: calc(#{$sidebar-width} + #{$margin});
-  top: $margin;
+  right: calc(#{$sidebar-width} + #{$padding});
+  top: $padding;
 
   @media (min-width: 768px) {
     display: none;

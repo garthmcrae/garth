@@ -36,7 +36,7 @@
 
 .control {
   bottom: calc(#{$margin} + 80px);
-  left: calc(#{$sidebar-width} + #{$margin});
+  left: calc(#{$sidebar-width} + #{$padding});
   position: absolute;
 
   @media (min-width: 768px) {

@@ -1,5 +1,6 @@
 export { default as Align } from './Align';
 export { default as Anchor } from './Anchor';
+export { default as Body } from './Body';
 export { default as Border } from './Border';
 export { default as Brand } from './Brand';
 export { default as Burger } from './Burger';
