@@ -2,39 +2,36 @@
 
 .nav-item {
   appearance: none;
-  background: var(--nav-item-background, #{$background});
-  border-color: var(--nav-item-border-color, currentColor);
-  border-radius: var(--nav-item-border-radius, #{$border-radius});
-  border-style: var(--nav-item-border-style, #{$border-style});
-  border-width: var(--nav-item-border-width, #{$border-width});
-  box-shadow: var(--nav-item-box-shadow, none);
-  box-sizing: var(--nav-item-border-sizing, border-box);
-  color: var(--nav-item-color, currentColor);
-  cursor: var(--nav-item-cursor, default);
-  display: var(--nav-item-display, block);
-  font-family: var(--nav-item-font-family, inherit);
-  font-size: var(--nav-item-font-size, inherit);
-  font-weight: var(--nav-item-font-weight, #{$font-weight});
-  line-height: var(--nav-item-line-height, #{$line-height});
-  outline-offset: var(--nav-item-outline-offset, 0);
-  outline: var(--nav-item-outline, #{$border-width} solid transparent);
-  padding: var(--nav-item-padding, #{$padding});
-  text-align: var(--nav-item-text-align, left);
-  text-decoration: var(--nav-item-text-decoration, none);
+  background: $background;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  border-style: $border-style;
+  border-width: $border-width;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: $color;
+  cursor: default;
+  display: block;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  outline: none;
+  padding: $padding;
+  text-align: inherit;
+  text-decoration: none;
   text-overflow: ellipsis;
-  text-transform: var(--nav-item-text-transform, none);
-  transform: var(--nav-item-transform, none);
+  text-transform: none;
+  transform: $transform;
   transition: $transition;
-  user-select: var(--nav-item-user-select, none);
+  user-select: none;
   white-space: nowrap;
-  width: var(--nav-item-width, 100%);
+  width: 100%;
 
+  &:active,
   &:focus,
   &:hover {
-    background: var(--nav-item-active-background, #{$background});
-    box-shadow: var(--nav-item-active-box-shadow, none);
-    color: var(--nav-item-active-color, currentColor);
-    outline: var(--nav-item-active-outline, #{$border-width} solid #{$color});
-    transform: var(--nav-item-active-transform, none);
+    box-shadow: $active-box-shadow;
+    transform: $active-transform;
   }
 }

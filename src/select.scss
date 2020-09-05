@@ -1,73 +1,40 @@
 @import 'variables';
 
-$select-background: var(--select-background, #{$background});
-$select-border-color: var(--select-border-color, currentColor);
-$select-border-radius: var(--select-border-radius, #{$border-radius});
-$select-border-style: var(--select-border-style, #{$border-style});
-$select-border-width: var(--select-border-width, #{$border-width});
-$select-box-shadow: var(--select-box-shadow, none);
-$select-box-sizing: var(--select-border-sizing, border-box);
-$select-color: var(--select-color, currentColor);
-$select-cursor: var(--select-cursor, default);
-$select-display: var(--select-display, block);
-$select-font-family: var(--select-font-family, inherit);
-$select-font-size: var(--select-font-size, inherit);
-$select-font-weight: var(--select-font-weight, #{$font-weight});
-$select-line-height: var(--select-line-height, #{$line-height});
-$select-outline-offset: var(--select-outline-offset, 0);
-$select-outline: var(--select-outline, #{$border-width} solid transparent);
-$select-padding: var(--select-padding, #{$padding});
-$select-text-align: var(--select-text-align, left);
-$select-text-decoration: var(--select-text-decoration, none);
-$select-text-transform: var(--select-text-transform, none);
-$select-user-select: var(--select-user-select, none);
-$select-width: var(--select-width, 100%);
-
-$select-active-background: var(--select-active-background, white);
-$select-active-border-color: var(--select-active-border-color, currentColor);
-$select-active-box-shadow: var(--select-active-box-shadow, none);
-$select-active-outline: var(--select-active-outline, 2px solid black);
-$select-active-transform: var(--select-active-transform, none);
-
 .select {
-  height: calc(#{$select-border-width} * 2 + #{$select-padding} * 2 + #{$select-line-height});
+  height: calc(#{$border-width} * 2 + #{$padding} * 2 + #{$line-height});
   position: relative;
   z-index: 1;
 }
 
 .options {
   appearance: none;
-  background: $select-background;
-  border-color: $select-border-color;
-  border-radius: $select-border-radius;
-  border-style: $select-border-style;
-  border-width: $select-border-width;
-  box-shadow: $select-box-shadow;
-  box-sizing: $select-box-sizing;
-  color: $select-color;
-  display: $select-display;
-  font-family: $select-font-family;
-  font-size: $select-font-size;
-  font-weight: $select-font-weight;
-  line-height: $select-line-height;
-  outline-offset: $select-outline-offset;
-  outline: $select-outline;
+  background: $background;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  border-style: $border-style;
+  border-width: $border-width;
+  box-shadow: $box-shadow;
+  box-sizing: box-sizing;
+  color: $color;
+  display: block;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  outline: none;
   position: absolute;
-  text-align: $select-text-align;
-  text-decoration: $select-text-decoration;
-  transform: $select-text-transform;
+  text-align: left;
+  text-decoration: none;
+  transform: none;
   transition: $transition;
-  user-select: $select-user-select;
-  width: $select-width;
+  user-select: none;
+  width: 100%;
 
   &.active,
   &.focus,
   &:hover {
-    background: $select-active-background;
-    border-color: $select-active-border-color;
-    box-shadow: $select-active-box-shadow;
-    outline: $select-active-outline;
-    transform: $select-active-transform;
+    box-shadow: $active-box-shadow;
+    transform: $active-transform;
   }
 }
 
@@ -79,10 +46,10 @@ $select-active-transform: var(--select-active-transform, none);
 }
 
 .options > label {
-  box-sizing: $select-box-sizing;
-  display: $select-display;
+  box-sizing: box-sizing;
+  display: block;
   overflow: hidden;
-  padding: $select-padding calc(#{$select-padding} * 2 + #{$select-line-height} / 0.866) $select-padding $select-padding;
+  padding: $padding calc(#{$padding} * 2 + #{$line-height} / 0.866) $padding $padding;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
@@ -94,15 +61,14 @@ $select-active-transform: var(--select-active-transform, none);
 }
 
 .options.active > label {
-  box-sizing: $select-box-sizing;
-  font-family: $select-font-family;
-  font-size: $select-font-size;
-  font-weight: $select-font-weight;
-  line-height: $select-line-height;
-  padding: $select-padding $select-padding $select-padding
-    calc(#{$select-padding} * 2 + calc(#{$select-line-height} * 0.866) / 0.866);
-  text-align: $select-text-align;
-  text-decoration: $select-text-decoration;
+  box-sizing: box-sizing;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  padding: $padding $padding $padding calc(#{$padding} * 2 + calc(#{$line-height} * 0.866) / 0.866);
+  text-align: left;
+  text-decoration: none;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -113,18 +79,17 @@ $select-active-transform: var(--select-active-transform, none);
   display: block;
 
   &::after {
-    border-color: $select-color transparent transparent transparent;
+    border-color: $color transparent transparent transparent;
     border-style: solid;
-    border-width: #{$select-line-height} calc(#{$select-line-height} / 0.866 / 2) 0 calc(#{$select-line-height} / 0.866 /
-          2);
+    border-width: $line-height calc(#{$line-height} / 0.866 / 2) 0 calc(#{$line-height} / 0.866 / 2);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $select-line-height;
+    height: $line-height;
     position: absolute;
-    right: $select-padding;
-    top: $select-padding;
-    width: $select-line-height;
+    right: $padding;
+    top: $padding;
+    width: $line-height;
     z-index: 1;
   }
 }
@@ -134,18 +99,17 @@ $select-active-transform: var(--select-active-transform, none);
   position: relative;
 
   &::before {
-    border-color: transparent transparent transparent $select-color;
+    border-color: transparent transparent transparent $color;
     border-style: solid;
-    border-width: calc(#{$select-line-height} / 2) 0 calc(#{$select-line-height} / 2)
-      calc(#{$select-line-height} * 0.866);
+    border-width: calc(#{$line-height} / 2) 0 calc(#{$line-height} / 2) calc(#{$line-height} * 0.866);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $select-line-height;
-    left: $select-padding;
-    top: $select-padding;
+    height: $line-height;
+    left: $padding;
+    top: $padding;
     position: absolute;
-    width: $select-line-height;
+    width: $line-height;
     z-index: 1;
   }
 }

@@ -5,4 +5,5 @@
   font-weight: $font-weight;
   line-height: $line-height;
   margin: $margin 0;
+  transition: font-size $duration, margin $duration;
 }

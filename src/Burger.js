@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './burger.scss';
 
 const Burger = ({ size = 20, width = 2, ...props }) => (
-  <svg className={styles.burger} viewBox={`0 0 ${size} ${size}`} height={size} width={size} {...props}>
+  <svg style={{ display: 'block' }} viewBox={`0 0 ${size} ${size}`} height={size} width={size} {...props}>
     <path d={`M0,0 L${size},0 L${size},${width} L0,${width}z`} fill="currentColor" />
     <path
       d={`M0,${size / 2 + width / 2} L${size},${size / 2 + width / 2} L${size},${size / 2 - width / 2} L0,${size / 2 -

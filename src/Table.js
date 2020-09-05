@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './table.scss';
 
 const Table = props => (
-  <div style={{ overflow: 'auto' }}>
+  <div className={styles.container}>
     <table className={styles.table} {...props} />
   </div>
 );

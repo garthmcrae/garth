@@ -1,8 +1,9 @@
 @import 'variables';
 
 .title {
-  font-size: var(--title-font-size, calc(#{$font-size} * 2));
-  font-weight: var(--title-font-weight, #{$font-weight});
-  line-height: var(--title-line-height, calc(#{$line-height} * 2));
-  margin: var(--title-margin, var(--margin) 0);
+  font-size: calc(#{$font-size} * 2);
+  font-weight: $font-weight;
+  line-height: calc(#{$line-height} * 2);
+  margin: $margin 0;
+  transition: font-size $duration, margin $duration;
 }

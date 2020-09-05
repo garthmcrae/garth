@@ -2,37 +2,32 @@
 
 .input {
   appearance: none;
-  background: var(--input-background, #{$background});
-  border-color: var(--input-border-color, currentColor);
-  border-radius: var(--input-border-radius, #{$border-radius});
-  border-style: var(--input-border-style, #{$border-style});
-  border-width: var(--input-border-width, #{$border-width});
-  box-shadow: var(--input-box-shadow, none);
-  box-sizing: var(--input-border-sizing, border-box);
-  color: var(--input-color, currentColor);
-  cursor: var(--input-cursor, default);
-  display: var(--input-display, block);
-  font-family: var(--input-font-family, inherit);
-  font-size: var(--input-font-size, inherit);
-  font-weight: var(--input-font-weight, #{$font-weight});
-  line-height: var(--input-line-height, #{$line-height});
-  outline-offset: var(--input-outline-offset, 0);
-  outline: var(--input-outline, #{$border-width} solid transparent);
-  padding: var(--input-padding, #{$padding});
-  text-align: var(--input-text-align, left);
-  text-decoration: var(--input-text-decoration, none);
-  transform: var(--input-transform, none);
+  background: $background;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  border-style: $border-style;
+  border-width: $border-width;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: $color;
+  cursor: default;
+  display: block;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  outline: none;
+  padding: $padding;
+  text-align: left;
+  transform: none;
   transition: $transition;
-  user-select: var(--input-user-select, none);
-  width: var(--input-width, 100%);
+  user-select: none;
+  width: 100%;
 
   &:focus,
   &:hover {
-    background: var(--input-active-background, #{$background});
-    border-color: var(--input-active-border-color, currentColor);
-    box-shadow: var(--input-active-box-shadow, none);
-    outline: var(--input-active-outline, #{$border-width} solid #{$color});
-    transform: var(--input-active-transform, none);
+    box-shadow: $active-box-shadow;
+    transform: $active-transform;
   }
 
   &::placeholder {
