@@ -3,7 +3,6 @@ import styles from './checkable.scss';
 
 const Checkable = ({ children, id, inputRef, name, ...props }) => {
   const { type } = props;
-  console.log(styles[type]);
   return (
     <div>
       <input className={styles.input} id={id} name={name} ref={inputRef} {...props} />
