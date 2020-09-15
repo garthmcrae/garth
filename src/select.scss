@@ -14,7 +14,7 @@
   border-style: $border-style;
   border-width: $border-width;
   box-shadow: $box-shadow;
-  box-sizing: box-sizing;
+  box-sizing: border-box;
   color: $color;
   display: block;
   font-family: inherit;
@@ -53,7 +53,6 @@
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  width: 100%;
 }
 
 .options.inactive > label {
@@ -68,11 +67,6 @@
   line-height: $line-height;
   padding: $padding $padding $padding calc(#{$padding} * 2 + calc(#{$line-height} * 0.866) / 0.866);
   text-align: left;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
 }
 
 .options.inactive > input:checked + label {
