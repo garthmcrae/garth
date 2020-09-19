@@ -23,7 +23,7 @@ const Select = props => {
     }
   };
   useOnClickOutside(ref, () => setActive(false));
-  const { disabled, label = '', name = 'select', options = [] } = props;
+  const { disabled, name = 'select', options = [] } = props;
   return (
     <div id={name} className={styles.select} ref={ref}>
       <div className={`${styles.options} ${active ? styles.active : styles.inactive} ${focus && styles.focus}`}>
@@ -36,7 +36,10 @@ const Select = props => {
                 id={`${name}-${index}`}
                 name={name}
                 onBlur={handleBlur}
-                onChange={handleFocus}
+                onChange={event => {
+                  handleFocus();
+                  options.onChange(event);
+                }}
                 onFocus={handleFocus}
                 onKeyPress={handleKeyPress}
                 type="radio"
