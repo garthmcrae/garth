@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useRef } from 'react';
 import styles from './select.scss';
 import useOnClickOutside from './useOnClickOutside';
 
