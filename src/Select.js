@@ -31,21 +31,20 @@ const Select = props => {
           return (
             <Fragment key={`${name}-${index}`}>
               <input
-                checked={value === option.value}
                 disabled={disabled}
-                id={`${name}-${index}`}
-                name={name}
                 onBlur={handleBlur}
-                onChange={event => {
-                  handleFocus();
-                  options.onChange(event);
-                }}
+                onChange={handleFocus}
                 onFocus={handleFocus}
                 onKeyPress={handleKeyPress}
+                id={`${name}-${index}`}
+                name={name}
                 type="radio"
                 value={option.value}
                 {...option.props}
               />
+              {/* <input
+                {...option.props}
+              /> */}
               <label htmlFor={`${name}-${index}`} onClick={handleClick}>
                 {option.label}
               </label>
