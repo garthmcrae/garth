@@ -1,9 +1,11 @@
 @import 'variables';
 
 .flex {
-  @media (min-width: 768px) {
-    align-items: stretch;
-    display: flex;
-    flex-wrap: wrap;
-  }
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }

@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './flex.scss';
 
-const Layout = props => <div className={styles.flex} {...props} />;
+function Flex({ wrap, ...props }) {
+  const classList = [styles.flex];
+  wrap && classList.push(styles.wrap);
+  return <div className={classList.join(' ')} {...props} />;
+}
 
-export default Layout;
+export default Flex;

@@ -14,18 +14,29 @@
   }
 }
 
-@media (min-width: 768px) {
-  .box {
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+@for $i from 1 through 11 {
+  .width-#{$i} {
+    flex-basis: (100% * $i / 12);
   }
+}
 
-  @for $i from 1 through 12 {
-    .width-#{$i} {
-      flex-basis: (100% * $i / 12);
-      flex-grow: 0;
-      flex-shrink: 0;
-    }
+.adaptive {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  @media (max-width: 768px - 1) {
+    flex-basis: 100%;
   }
+}
+
+.fluid {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.solid {
+  flex-basis: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
 }

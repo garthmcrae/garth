@@ -2,7 +2,7 @@
 
 .main {
   box-sizing: border-box;
-  flex: 1 0 $sidebar-width;
+  flex: 1 1 auto;
   position: relative;
   z-index: 1;
 }
