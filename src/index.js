@@ -8,6 +8,7 @@ export { default as Button } from './Button';
 export { default as Box } from './Box';
 export { default as Checkable } from './Checkable';
 export { default as Container } from './Container';
+export { default as Draw } from './Draw';
 export { default as Expand } from './Expand';
 export { default as Flex } from './Flex';
 export { default as Footer } from './Footer';
