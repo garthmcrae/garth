@@ -1,28 +1,38 @@
 @import 'variables';
 
-.nav {
+.container {
   background: $background;
   border-left-color: $border-color;
   border-left-style: $border-style;
   border-left-width: $border-width;
+  bottom: 0;
   box-sizing: border-box;
-  flex: 0 1 $sidebar-width;
-  height: 100vh;
   position: fixed;
   top: 0;
-  transition: right $duration;
-  right: 0;
+  transition: right 200ms ease-in-out;
   width: $sidebar-width;
   z-index: 2;
 
   @media (min-width: 768px) {
+    background: transparent;
     border-left-style: none;
-    flex: initial;
-    height: initial;
-    overflow-y: auto;
     position: relative;
-    width: initial;
+    width: auto;
   }
+}
+
+.control {
+  bottom: calc(#{$margin} + 80px);
+  right: calc(#{$sidebar-width} + #{$padding});
+  position: absolute;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.children {
+  position: relative;
 }
 
 .active {
@@ -34,15 +44,5 @@
 
   @media (min-width: 768px) {
     right: 0;
-  }
-}
-
-.control {
-  position: absolute;
-  right: calc(#{$sidebar-width} + #{$padding});
-  top: $padding;
-
-  @media (min-width: 768px) {
-    display: none;
   }
 }
