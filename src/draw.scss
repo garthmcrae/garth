@@ -11,7 +11,6 @@
   top: 0;
   transition: right 200ms ease-in-out;
   width: $sidebar-width;
-  z-index: 2;
 
   @media (min-width: 768px) {
     background: transparent;
@@ -37,10 +36,12 @@
 
 .active {
   right: 0;
+  z-index: 2;
 }
 
 .inactive {
   right: calc(#{$sidebar-width} * -1);
+  z-index: 1;
 
   @media (min-width: 768px) {
     right: 0;
