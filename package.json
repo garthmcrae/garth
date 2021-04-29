@@ -21,7 +21,7 @@
     "responsive",
     "ui"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/main.cjs.js",
   "module": "dist/main.esm.js",
