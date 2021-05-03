@@ -1,6 +1,5 @@
 export { default as Anchor } from './Anchor';
 export { default as Border } from './Border';
-export { default as Brand } from './Brand';
 export { default as Burger } from './Burger';
 export { default as Button } from './Button';
 export { default as Box } from './Box';
