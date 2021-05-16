@@ -2,7 +2,6 @@
 
 .box {
   box-sizing: border-box;
-  padding: $padding;
   transition: margin $duration, padding $duration;
 
   > :first-child {
@@ -26,6 +25,14 @@
   @media (max-width: 768px - 1) {
     flex-basis: 100%;
   }
+}
+
+.assertive {
+  padding: $padding;
+}
+
+.passive {
+  padding: 0;
 }
 
 .fluid {
