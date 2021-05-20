@@ -2,10 +2,13 @@
 
 .anchor {
   background: $background;
+  border-style: none;
   box-shadow: 0 0 0 $border-width transparent;
   color: $color;
+  font-family: inherit;
   font-weight: $font-weight;
   outline: none;
+  padding: 0;
   text-decoration: underline;
   transition: $transition;
   user-select: none;
