@@ -49,7 +49,7 @@
   box-sizing: box-sizing;
   display: block;
   overflow: hidden;
-  padding: $padding calc(#{$padding} * 2 + #{$line-height} / 0.866) $padding $padding;
+  padding: $padding calc(#{$padding} * 2 + #{$font-size} / 0.866) $padding $padding;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
@@ -75,15 +75,15 @@
   &::after {
     border-color: $color transparent transparent transparent;
     border-style: solid;
-    border-width: $line-height calc(#{$line-height} / 0.866 / 2) 0 calc(#{$line-height} / 0.866 / 2);
+    border-width: $font-size calc(#{$font-size} / 0.866 / 2) 0 calc(#{$font-size} / 0.866 / 2);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $line-height;
+    height: $font-size;
     position: absolute;
     right: $padding;
-    top: $padding;
-    width: $line-height;
+    top: calc(#{$padding} + #{$line-height} / 2 - #{$font-size} / 2);
+    width: $font-size;
     z-index: 1;
   }
 }
@@ -95,15 +95,15 @@
   &::before {
     border-color: transparent transparent transparent $color;
     border-style: solid;
-    border-width: calc(#{$line-height} / 2) 0 calc(#{$line-height} / 2) calc(#{$line-height} * 0.866);
+    border-width: calc(#{$font-size} / 2) 0 calc(#{$font-size} / 2) calc(#{$font-size} * 0.866);
     box-sizing: border-box;
     content: '';
     display: block;
-    height: $line-height;
+    height: $font-size;
     left: $padding;
-    top: $padding;
+    top: calc(#{$padding} + #{$line-height} / 2 - #{$font-size} / 2);
     position: absolute;
-    width: $line-height;
+    width: $font-size;
     z-index: 1;
   }
 }
