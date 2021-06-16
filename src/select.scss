@@ -65,7 +65,7 @@
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
-  padding: $padding $padding $padding calc(#{$padding} * 2 + calc(#{$line-height} * 0.866) / 0.866);
+  padding: $padding $padding $padding calc(#{$padding} * 2 + calc(#{$font-size} * 0.866) / 0.866);
   text-align: left;
 }
 
