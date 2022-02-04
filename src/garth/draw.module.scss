@@ -1,0 +1,50 @@
+@import "variables";
+
+.container {
+  background: $background;
+  border-left-color: $border-color;
+  border-left-style: $border-style;
+  border-left-width: $border-width;
+  bottom: 0;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  transition: border-left-color $duration ease-in-out,
+    right $duration ease-in-out;
+  width: $sidebar-width;
+
+  @media (min-width: 768px) {
+    background: transparent;
+    border-left-style: none;
+    position: relative;
+    width: auto;
+  }
+}
+
+.control {
+  bottom: calc(#{$margin} + 80px);
+  right: calc(#{$sidebar-width} + #{$padding});
+  position: absolute;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.children {
+  position: relative;
+}
+
+.active {
+  right: 0;
+  z-index: 2;
+}
+
+.inactive {
+  right: calc(#{$sidebar-width} * -1);
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    right: 0;
+  }
+}

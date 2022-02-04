@@ -1,0 +1,29 @@
+$background: var(--background, white);
+$border-color: var(--border-color, black);
+$border-radius: var(--border-radius, 0);
+$border-style: var(--border-style, solid);
+$border-width: var(--border-width, 2px);
+$box-shadow: var(--box-shadow, 4px 4px 0 0 currentColor);
+$color: var(--color, black);
+$duration: var(--duration, 200ms);
+$font-family: var(--font-family, system-ui);
+$font-size: var(--font-size, 16px);
+$font-weight: var(--font-weight, 700);
+$line-height: var(--line-height, 20px);
+$margin: var(--margin, 32px);
+$padding: var(--padding, 16px);
+$transform: var(--transform, translate(0, 0));
+$transition: var(
+  --transition,
+  background-color 200ms,
+  border 200ms,
+  box-shadow 200ms,
+  color 200ms,
+  outline 200ms,
+  transform 200ms
+);
+
+$active-box-shadow: var(--active-box-shadow, 8px 8px 0 0 currentColor);
+$active-transform: var(--active-transform, translate(-4px, -4px));
+
+$sidebar-width: var(--sidebar-width, 240px);

@@ -1,0 +1,35 @@
+@import "variables";
+
+.input {
+  appearance: none;
+  background: $background;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  border-style: $border-style;
+  border-width: $border-width;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: $color;
+  cursor: default;
+  display: block;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  outline: none;
+  padding: $padding;
+  text-align: left;
+  transform: none;
+  transition: $transition;
+  width: 100%;
+
+  &:focus,
+  &:hover {
+    box-shadow: $active-box-shadow;
+    transform: $active-transform;
+  }
+
+  &::placeholder {
+    color: currentColor;
+  }
+}

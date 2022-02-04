@@ -15,18 +15,18 @@ npm install --save garth
 ### Usage
 
 ```jsx
-import React from 'react';
-import { Button } from 'garth';
+import React from "react";
+import { Button } from "garth";
 
-const Example = props => <Button />;
+const Example = (props) => <Button />;
 ```
 
 ### Dependencies
 
 ##### Required Peer Dependencies
 
-  * [**react**](https://www.npmjs.com/package/react)
-  * [**react-dom**](https://www.npmjs.com/package/react-dom)
+- [**react**](https://www.npmjs.com/package/react)
+- [**react-dom**](https://www.npmjs.com/package/react-dom)
 
 ## License
 

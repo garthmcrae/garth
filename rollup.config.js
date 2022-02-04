@@ -1,40 +1,30 @@
-import autoprefixer from 'autoprefixer';
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-import pkg from './package.json';
-import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
-import url from 'rollup-plugin-url';
+import autoprefixer from "autoprefixer";
+import babel from "@rollup/plugin-babel";
+import postcss from "rollup-plugin-postcss";
+import { terser } from "rollup-plugin-terser";
 
-export default {
-  input: 'src/index.js',
-  plugins: [
-    external(),
-    postcss({
-      modules: true,
-      plugins: [autoprefixer()],
-    }),
-    url(),
-    babel({
-      exclude: 'node_modules/**',
-      presets: [['@babel/env', { modules: false }], '@babel/preset-react'],
-    }),
-    resolve(),
-    commonjs(),
-  ],
-  output: [
-    {
-      name: pkg.name,
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'auto',
-    },
-    {
-      name: pkg.name,
-      file: pkg.module,
-      format: 'es',
-      exports: 'auto',
-    },
-  ],
-};
+const config = [
+  {
+    input: "src/garth/index.js",
+    plugins: [
+      babel({
+        babelHelpers: "bundled",
+        babelrc: false,
+        presets: ["@babel/preset-env", "@babel/preset-react"],
+        extensions: ["js"],
+        exclude: "node_modules/**",
+      }),
+      postcss({
+        modules: {
+          generateScopedName: "[hash:base64:5]",
+        },
+        plugins: [autoprefixer()],
+        extract: false,
+      }),
+      terser(),
+    ],
+    output: [{ file: "bundle.esm.js", format: "esm", sourcemap: true }],
+    external: ["react", "prop-types"],
+  },
+];
+export default config;
