@@ -26,6 +26,9 @@
   "type": "module",
   "source": "src/garth/index.js",
   "main": "bundle.esm.js",
+  "files": [
+    "bundle.*"
+  ],
   "scripts": {
     "build": "react-scripts build",
     "bundle": "rollup -c",
