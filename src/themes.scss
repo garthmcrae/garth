@@ -1,13 +1,12 @@
-.default {
-}
-
 @keyframes blur {
   0% {
     opacity: 0.95;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.95;
   }
@@ -34,7 +33,6 @@
   --box-shadow: 4px 4px 0 0 magenta;
   --color: blue;
   --padding: 12px;
-
   --active-box-shadow: 8px 8px 0 0 magenta;
   --active-transform: translate(-4px, -4px);
 
@@ -54,7 +52,6 @@
   --font-weight: 600;
   --margin: 16px;
   --padding: 16px;
-
   --active-box-shadow: 8px 8px 0 0 olivedrab;
   --active-transform: translate(-4px, -4px);
 
