@@ -1,0 +1,64 @@
+@import "variables";
+
+.input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.label {
+  background: $background;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  border-style: $border-style;
+  border-width: $border-width;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: $color;
+  cursor: default;
+  display: block;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  outline: none;
+  padding: $padding $padding $padding calc(#{$padding} * 2 + #{$line-height});
+  text-align: left;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: none;
+  transform: none;
+  transition: $transition;
+  user-select: none;
+  width: 100%;
+
+  &::before {
+    border-color: currentColor;
+    border-style: $border-style;
+    border-width: $border-width;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: $line-height;
+    left: $padding;
+    top: $padding;
+    position: absolute;
+    width: $line-height;
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: $active-box-shadow;
+    transform: $active-transform;
+  }
+}
+
+.input:checked + .label::before {
+  background: currentColor;
+}
+
+.input:focus + .label {
+  box-shadow: $active-box-shadow;
+  transform: $active-transform;
+}

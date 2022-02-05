@@ -1,0 +1,113 @@
+@import "variables";
+
+.select {
+  height: calc(#{$border-width} * 2 + #{$padding} * 2 + #{$line-height});
+  position: relative;
+  z-index: 1;
+}
+
+.options {
+  appearance: none;
+  background: $background;
+  border-color: $border-color;
+  border-radius: $border-radius;
+  border-style: $border-style;
+  border-width: $border-width;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: $color;
+  display: block;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  outline: none;
+  position: absolute;
+  text-align: left;
+  text-decoration: none;
+  transform: none;
+  transition: $transition;
+  user-select: none;
+  width: 100%;
+
+  &.active,
+  &.focus,
+  &:hover {
+    box-shadow: $active-box-shadow;
+    transform: $active-transform;
+  }
+}
+
+.options > input {
+  appearance: none;
+  opacity: 0;
+  outline: none;
+  position: absolute;
+}
+
+.options > label {
+  box-sizing: box-sizing;
+  display: block;
+  overflow: hidden;
+  padding: $padding calc(#{$padding} * 2 + #{$font-size} / 0.866) $padding
+    $padding;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.options.inactive > label {
+  display: none;
+}
+
+.options.active > label {
+  box-sizing: box-sizing;
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  padding: $padding $padding $padding
+    calc(#{$padding} * 2 + calc(#{$font-size} * 0.866) / 0.866);
+  text-align: left;
+}
+
+.options.inactive > input:checked + label {
+  display: block;
+
+  &::after {
+    border-color: $color transparent transparent transparent;
+    border-style: solid;
+    border-width: $font-size calc(#{$font-size} / 0.866 / 2) 0
+      calc(#{$font-size} / 0.866 / 2);
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: $font-size;
+    position: absolute;
+    right: $padding;
+    top: calc(#{$padding} + #{$line-height} / 2 - #{$font-size} / 2);
+    width: $font-size;
+    z-index: 1;
+  }
+}
+
+.options.active > input:focus + label,
+.options.active > input:checked + label {
+  position: relative;
+
+  &::before {
+    border-color: transparent transparent transparent $color;
+    border-style: solid;
+    border-width: calc(#{$font-size} / 2) 0 calc(#{$font-size} / 2)
+      calc(#{$font-size} * 0.866);
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: $font-size;
+    left: $padding;
+    top: calc(#{$padding} + #{$line-height} / 2 - #{$font-size} / 2);
+    position: absolute;
+    width: $font-size;
+    z-index: 1;
+  }
+}

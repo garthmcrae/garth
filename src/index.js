@@ -1,18 +1,17 @@
-export { default as Anchor } from './Anchor';
-export { default as Border } from './Border';
-export { default as Burger } from './Burger';
-export { default as Button } from './Button';
-export { default as Box } from './Box';
-export { default as Checkable } from './Checkable';
-export { default as Container } from './Container';
-export { default as Draw } from './Draw';
-export { default as Expand } from './Expand';
-export { default as Flex } from './Flex';
-export { default as Input } from './Input';
-export { default as Label } from './Label';
-export { default as Paragraph } from './Paragraph';
-export { default as Root } from './Root';
-export { default as Rule } from './Rule';
-export { default as Select } from './Select';
-export { default as Table } from './Table';
-export { default as Title } from './Title';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
