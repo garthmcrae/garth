@@ -22,7 +22,7 @@ import navigationItems from "./navigationItems";
 const themes = ["default", "gameboy", "new-wave", "vhs"];
 
 const App = () => {
-  const [theme, setTheme] = useState(themes[2]);
+  const [theme, setTheme] = useState(themes[0]);
   const handleTheme = () => {
     setTheme(getArrayRandomItem(themes.filter((t) => t !== theme)));
   };
