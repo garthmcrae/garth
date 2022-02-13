@@ -9,7 +9,7 @@ $size: 88px;
   box-sizing: border-box;
   display: block;
   height: $size;
-  padding: 6%;
+  padding: 5% 6% 7%;
   width: $size;
 }
 
@@ -60,6 +60,7 @@ $size: 88px;
 }
 
 .left {
+  animation: nimbus 5s ease-in-out infinite;
   background-color: white;
   border-radius: 46% 50% 48% 46%;
   height: 24%;
@@ -71,6 +72,7 @@ $size: 88px;
 }
 
 .right {
+  animation: cumulus 4s ease-in-out infinite;
   background-color: white;
   border-radius: 48% 47% 50% 49%;
   height: 50%;
@@ -79,36 +81,6 @@ $size: 88px;
   top: 11%;
   width: 50%;
   z-index: 3;
-}
-
-.blink {
-  animation: blink 10s ease-in-out infinite;
-}
-
-.cumulus {
-  animation: cumulus 4s ease-in-out infinite;
-}
-
-.nimbus {
-  animation: nimbus 5s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1, 1);
-  }
-  50.5% {
-    transform: scale(1, 0);
-  }
-  51% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
 }
 
 @keyframes nimbus {
