@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {
-  Anchor,
   Box,
   Button,
   Container,
@@ -10,8 +9,8 @@ import {
   Layout,
   Paragraph,
   Root,
-  Title,
 } from "./garth";
+import Eye from "./Eye";
 import Home from "./Home";
 import Components from "./Components";
 import Compositions from "./Compositions";
@@ -26,67 +25,58 @@ const App = () => {
   const handleTheme = () => {
     setTheme(getArrayRandomItem(themes.filter((t) => t !== theme)));
   };
+  document.documentElement.className = theme;
   return (
     <Router>
-      <div className={theme}>
-        <Root>
-          <Layout>
-            <header>
-              <Flex>
-                <Box>
-                  <Title>
-                    <Anchor element={Link} to="/">
-                      Garth
-                    </Anchor>
-                  </Title>
-                </Box>
-                <Box fluid passive />
-                <Box passive>
-                  <Draw>
-                    <nav aria-label="Garth" role="navigation">
-                      <Flex element="ul" wrap>
-                        {navigationItems.map(({ label, path }) => (
-                          <Box adaptive element="li" key={label}>
-                            <Button element={Link} to={path}>
-                              {label}
-                            </Button>
-                          </Box>
-                        ))}
-                        <Box adaptive element="li">
-                          <Button type="button" onClick={handleTheme}>
-                            Theme
+      <Root>
+        <Layout>
+          <header>
+            <Flex>
+              <Box passive>
+                <Eye onClick={handleTheme} role="button" />
+              </Box>
+              <Box fluid passive />
+              <Box passive>
+                <Draw>
+                  <nav aria-label="Garth" role="navigation">
+                    <Flex element="ul" wrap>
+                      {navigationItems.map(({ label, path }) => (
+                        <Box adaptive element="li" key={label}>
+                          <Button element={Link} to={path}>
+                            {label}
                           </Button>
                         </Box>
-                      </Flex>
-                    </nav>
-                  </Draw>
-                </Box>
-              </Flex>
-            </header>
-            <main>
-              <Container>
-                <Routes>
-                  <Route exact path="/" element={<Home />} />
-                  <Route
-                    exact
-                    path="/compositions"
-                    element={<Compositions />}
-                  />
-                  <Route exact path="/components" element={<Components />} />
-                </Routes>
-              </Container>
-            </main>
-            <footer>
-              <Flex>
-                <Box fluid />
-                <Box>
-                  <Paragraph>&copy; Copyright.</Paragraph>
-                </Box>
-              </Flex>
-            </footer>
-          </Layout>
-        </Root>
-      </div>
+                      ))}
+                      {/*<Box adaptive element="li">
+                        <Button type="button" onClick={handleTheme}>
+                          Theme
+                        </Button>
+                      </Box>*/}
+                    </Flex>
+                  </nav>
+                </Draw>
+              </Box>
+            </Flex>
+          </header>
+          <main>
+            <Container>
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/compositions" element={<Compositions />} />
+                <Route exact path="/components" element={<Components />} />
+              </Routes>
+            </Container>
+          </main>
+          <footer>
+            <Flex>
+              <Box fluid />
+              <Box>
+                <Paragraph>&copy; Copyright.</Paragraph>
+              </Box>
+            </Flex>
+          </footer>
+        </Layout>
+      </Root>
     </Router>
   );
 };

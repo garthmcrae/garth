@@ -1,15 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  Anchor,
-  Button,
-  Border,
-  Box,
-  Container,
-  Flex,
-  Paragraph,
-  Title,
-} from "./garth";
+import { Box, Container, Paragraph, Typography } from "./garth";
 import Code from "./Code";
 
 const Home = () => {
@@ -17,35 +7,21 @@ const Home = () => {
     <div>
       <Container>
         <Box>
-          <Title element="h1">Version {process.env.REACT_APP_VERSION}</Title>
-          <Paragraph>
-            Responsive, mobile-first user interface components for{" "}
-            <Anchor href="https://reactjs.org/">React</Anchor>.
+          <Paragraph element="h1">
+            Version {process.env.REACT_APP_VERSION}
           </Paragraph>
-          <Paragraph>
-            Garth is a user interface library by Garth for Garth.
-          </Paragraph>
+          <Typography size={[3, 4]}>
+            Garth is a responsive user interface library by Garth for Garth.
+          </Typography>
         </Box>
         <Box>
-          <Border>
-            <Box>
-              <Paragraph>
-                <strong>Note</strong> — Garth documentation is a work in
-                progress.
-              </Paragraph>
-            </Box>
-          </Border>
-        </Box>
-        <Box>
+          <Paragraph>Install with NPM.</Paragraph>
           <Code code="npm install --save garth" language="bash" />
         </Box>
-        <Flex wrap>
-          <Box adaptive width={6}>
-            <Button element={Link} to="/components">
-              View components
-            </Button>
-          </Box>
-        </Flex>
+        <Box>
+          <Paragraph>Install with Yarn.</Paragraph>
+          <Code code="yarn add garth" language="bash" />
+        </Box>
       </Container>
     </div>
   );

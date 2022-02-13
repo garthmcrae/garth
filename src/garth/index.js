@@ -17,3 +17,4 @@ export { Rule } from "./Rule";
 export { Select } from "./Select";
 export { Table } from "./Table";
 export { Title } from "./Title";
+export { Typography } from "./Typography";

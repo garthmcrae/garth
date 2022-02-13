@@ -1,0 +1,136 @@
+$duration: 300ms;
+$size: 88px;
+
+.socket {
+  appearance: none;
+  background-color: black;
+  border: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  height: $size;
+  padding: 6%;
+  width: $size;
+}
+
+.eye {
+  background-color: yellowgreen;
+  border-radius: 48% 47% 48% 49%;
+  display: block;
+  height: 100%;
+  position: relative;
+  transition: background-color $duration ease-in-out;
+  width: 100%;
+  z-index: 1;
+
+  > .pupil {
+    background-color: green;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: orange;
+
+    > .pupil {
+      background-color: orangered;
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    background-color: pink;
+
+    > .pupil {
+      background-color: red;
+    }
+  }
+}
+
+.pupil {
+  border-radius: 47% 48% 49% 50%;
+  height: 63%;
+  left: 19%;
+  position: absolute;
+  top: 19%;
+  width: 63%;
+  z-index: 2;
+  transition: background-color $duration ease-in-out,
+    transform $duration ease-in-out;
+  transform: scale(1);
+}
+
+.left {
+  background-color: white;
+  border-radius: 46% 50% 48% 46%;
+  height: 24%;
+  left: 6%;
+  position: absolute;
+  top: 41%;
+  width: 24%;
+  z-index: 3;
+}
+
+.right {
+  background-color: white;
+  border-radius: 48% 47% 50% 49%;
+  height: 50%;
+  left: 34%;
+  position: absolute;
+  top: 11%;
+  width: 50%;
+  z-index: 3;
+}
+
+.blink {
+  animation: blink 10s ease-in-out infinite;
+}
+
+.cumulus {
+  animation: cumulus 4s ease-in-out infinite;
+}
+
+.nimbus {
+  animation: nimbus 5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  50.5% {
+    transform: scale(1, 0);
+  }
+  51% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes nimbus {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cumulus {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

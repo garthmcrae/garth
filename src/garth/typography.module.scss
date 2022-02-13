@@ -1,0 +1,23 @@
+@import "variables";
+
+.typography {
+  font-weight: $font-weight;
+  margin: $margin 0;
+  transition: font-size $duration, margin $duration;
+}
+
+@for $i from 1 through 4 {
+  .size-0-#{$i} {
+    font-size: calc(#{$font-size} * #{$i});
+    line-height: calc(#{$line-height} * #{$i});
+  }
+}
+
+@media (min-width: 768px) {
+  @for $i from 1 through 4 {
+    .size-1-#{$i} {
+      font-size: calc(#{$font-size} * #{$i});
+      line-height: calc(#{$line-height} * #{$i});
+    }
+  }
+}

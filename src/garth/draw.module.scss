@@ -22,7 +22,7 @@
 }
 
 .control {
-  bottom: calc(#{$margin} + 80px);
+  top: $padding;
   right: calc(#{$sidebar-width} + #{$padding});
   position: absolute;
 

@@ -95,5 +95,10 @@
         "git add"
       ]
     }
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-syntax-highlighter)"
+    ]
   }
 }
