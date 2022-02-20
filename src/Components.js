@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Paragraph, Rule, Title } from "./garth";
+import { Box, Button, Flex, Paragraph, Rule, Title, Typography } from "./garth";
 import { Link } from "react-router-dom";
 import Example from "./Example";
 import anchor from "./components/anchor";
@@ -28,11 +28,10 @@ const Page = () => {
   return (
     <>
       <Box>
-        <Title element="h1">Components</Title>
-        <Paragraph>
-          Available components and basic usage, for referances and commonly used
-          combinations of components and layouts.
-        </Paragraph>
+        <Paragraph element="h1">1. Components</Paragraph>
+        <Typography size={[3, 4]}>
+          Available components and basic usage.
+        </Typography>
       </Box>
       <Box>
         <Rule />
@@ -67,10 +66,13 @@ const Page = () => {
         </Paragraph>
       </Box>
       <Flex>
-        <Box adaptive width={6}>
+        <Box adaptive>
           <Button element={Link} to="/compositions">
             View compositions
           </Button>
+        </Box>
+        <Box adaptive>
+          <Button onClick={() => window.scrollTo(0, 0)}>Back to top</Button>
         </Box>
       </Flex>
     </>

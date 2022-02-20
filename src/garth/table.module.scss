@@ -20,12 +20,12 @@
   width: 100%;
 
   > thead > tr > th {
-    background: $color;
+    background-color: $color;
     border-color: $color;
     border-radius: $border-radius;
     border-style: $border-style;
     border-width: $border-width;
-    color: $background;
+    color: $background-color;
     font-weight: $font-weight;
     padding: $padding;
     vertical-align: top;

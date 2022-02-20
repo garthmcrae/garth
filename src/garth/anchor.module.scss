@@ -1,7 +1,7 @@
 @import "variables";
 
 .anchor {
-  background: transparent;
+  background-color: transparent;
   border-style: none;
   box-shadow: 0 0 0 $border-width transparent;
   color: $color;
@@ -15,8 +15,8 @@
 
   &:focus,
   &:hover {
-    background: $color;
+    background-color: $color;
     box-shadow: 0 0 0 $border-width $color;
-    color: $background;
+    color: $background-color;
   }
 }

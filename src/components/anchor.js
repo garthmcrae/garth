@@ -30,7 +30,7 @@ const object = {
   code,
   component: ComponentName,
   description,
-  name: "Anchor",
+  name: "1.1 Anchor",
 };
 
 export default object;

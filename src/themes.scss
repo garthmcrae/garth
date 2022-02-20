@@ -1,4 +1,35 @@
-@keyframes blur {
+html {
+  transition: background 200ms, color 200ms;
+}
+
+.light {
+  --background-color: white;
+  --border-width: 1px;
+  --box-shadow: 0 0 0 0 currentColor;
+  --color: black;
+  --font-weight: 400;
+
+  --active-box-shadow: 4px 4px 0 0 currentColor;
+  --active-transform: translate(-2px, -2px);
+}
+
+.vhs {
+  --background-color: blue;
+  --border-color: yellow;
+  --box-shadow: -8px 0 0 0 blue;
+  --color: yellow;
+  --font-weight: bold;
+
+  --active-box-shadow: -8px 0 0 0 currentColor;
+  --active-transform: translate(0, 0);
+
+  animation: flicker 100ms infinite;
+  background-color: var(--background-color);
+  color: var(--color);
+  text-shadow: 1px 1px green, -1px -1px red;
+}
+
+@keyframes flicker {
   0% {
     opacity: 0.95;
   }
@@ -12,50 +43,18 @@
   }
 }
 
-.vhs {
-  --background: blue;
-  --border-color: yellow;
-  --color: yellow;
-  --font-weight: bold;
-
-  animation: blur 100ms infinite;
-  background: var(--background);
-  color: var(--color);
-  text-shadow: 1px 1px green, -1px -1px red;
-  transition: background 200ms, color 200ms;
-}
-
-.new-wave {
-  --background: cyan;
-  --border-color: blue;
-  --border-radius: 4px;
-  --border-width: 2px;
-  --box-shadow: 4px 4px 0 0 magenta;
-  --color: blue;
-  --padding: 12px;
-  --active-box-shadow: 8px 8px 0 0 magenta;
-  --active-transform: translate(-4px, -4px);
-
-  background: var(--background);
-  color: var(--color);
-  transition: background 200ms, color 200ms;
-}
-
 .gameboy {
-  --background: yellowgreen;
+  --background-color: yellowgreen;
   --border-color: darkolivegreen;
-  --border-width: 3px;
-  --box-shadow: 4px 4px 0 0 olivedrab;
+  --border-radius: 8px;
+  --border-width: 2px;
+  --box-shadow: 0 4px 0 0 olivedrab;
   --color: darkolivegreen;
-  --font-size: 18px;
-  --line-height: 22px;
-  --font-weight: 600;
-  --margin: 16px;
-  --padding: 16px;
-  --active-box-shadow: 8px 8px 0 0 olivedrab;
-  --active-transform: translate(-4px, -4px);
+  --font-weight: 900;
 
-  background: var(--background);
+  --active-box-shadow: 0 12px 0 0 olivedrab;
+  --active-transform: translate(0, -8px);
+
+  background-color: var(--background-color);
   color: var(--color);
-  transition: background 200ms, color 200ms;
 }

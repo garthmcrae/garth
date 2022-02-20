@@ -2,14 +2,12 @@ import React from "react";
 import { Box, Container, Paragraph, Typography } from "./garth";
 import Code from "./Code";
 
-const Home = () => {
+const Start = () => {
   return (
     <div>
       <Container>
         <Box>
-          <Paragraph element="h1">
-            Version {process.env.REACT_APP_VERSION}
-          </Paragraph>
+          <Paragraph element="h1">0. Start</Paragraph>
           <Typography size={[3, 4]}>
             Garth is a responsive user interface library by Garth for Garth.
           </Typography>
@@ -27,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Start;

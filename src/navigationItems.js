@@ -1,15 +1,15 @@
 const items = [
   {
-    label: 'Home',
-    path: '/',
+    label: "0. Start",
+    path: "/",
   },
   {
-    label: 'Components',
-    path: '/components',
+    label: "1. Components",
+    path: "/components",
   },
   {
-    label: 'Compositions',
-    path: '/compositions',
+    label: "2. Compositions",
+    path: "/compositions",
   },
 ];
 
