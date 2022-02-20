@@ -22,7 +22,7 @@ import navigationItems from "./navigationItems";
 const themes = ["default", "gameboy", "light", "vhs"];
 
 const App = () => {
-  const [theme, setTheme] = useState(themes[0]);
+  const [theme, setTheme] = useState(themes[2]);
   const handleTheme = () => {
     setTheme(getArrayRandomItem(themes.filter((t) => t !== theme)));
   };
@@ -37,7 +37,7 @@ const App = () => {
                 <Title>
                   <Anchor
                     element={Link}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", whiteSpace: "nowrap" }}
                     to="/"
                   >
                     Garth {process.env.REACT_APP_VERSION}

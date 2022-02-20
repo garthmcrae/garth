@@ -8,7 +8,7 @@ import {
   Flex,
   Paragraph,
   Rule,
-  Title,
+  Typography,
 } from "./garth";
 import Example from "./Example";
 import navigationItems from "./navigationItems";
@@ -29,12 +29,10 @@ const Page = () => {
   return (
     <>
       <Box>
-        <Title>Compositions</Title>
-      </Box>
-      <Box>
-        <Paragraph>
-          Navigation compositions using buttons and layout variations.
-        </Paragraph>
+        <Paragraph element="h1">2. Compositions</Paragraph>
+        <Typography size={[3, 4]}>
+          Compositions using component and layout variations.
+        </Typography>
       </Box>
       <Box>
         <Rule />

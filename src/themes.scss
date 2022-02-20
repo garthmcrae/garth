@@ -8,9 +8,16 @@ html {
   --box-shadow: 0 0 0 0 currentColor;
   --color: black;
   --font-weight: 400;
+  --margin: 16px;
+  --padding: 16px;
 
   --active-box-shadow: 4px 4px 0 0 currentColor;
   --active-transform: translate(-2px, -2px);
+
+  @media (min-width: 768px) {
+    --margin: 32px;
+    --padding: 32px;
+  }
 }
 
 .vhs {
